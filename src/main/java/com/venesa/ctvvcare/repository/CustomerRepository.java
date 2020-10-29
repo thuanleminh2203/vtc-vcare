@@ -1,7 +1,6 @@
 package com.venesa.ctvvcare.repository;
 
 import com.venesa.ctvvcare.entity.CustomerEntity;
-import com.venesa.ctvvcare.payload.response.CustomerRespone;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;

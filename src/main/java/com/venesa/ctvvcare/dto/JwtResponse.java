@@ -1,19 +1,20 @@
 package com.venesa.ctvvcare.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.security.core.GrantedAuthority;
+
 import java.io.Serializable;
+import java.util.Collection;
+import java.util.List;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class JwtResponse implements Serializable {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 3829085489126116684L;
-	private final String jwttoken;
 
-	public JwtResponse(String jwttoken) {
-		this.jwttoken = jwttoken;
-	}
+    private String jwtToken;
+    private Collection<? extends GrantedAuthority> role;
 
-	public String getToken() {
-		return this.jwttoken;
-	}
 }

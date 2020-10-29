@@ -13,5 +13,6 @@ import java.util.List;
 public interface UserDetailRepository extends JpaRepository<UserDetails, Integer> {
 	
 	@Query(value ="SELECT ud.id, ud.birthday , ud.fullname, ud.khoa, ud.phone_number, u.username from user_details ud JOIN user u on ud.id_user = u.id", nativeQuery=true)
-	public List<UserDetailDTO> getAll();
+	List<UserDetailDTO> getAll();
+
 }

@@ -1,31 +1,33 @@
 package com.venesa.ctvvcare.controller;
 
 import com.venesa.ctvvcare.component.WrapperResponseData;
-import com.venesa.ctvvcare.config.UserPrincipal;
-import com.venesa.ctvvcare.entity.User;
 import com.venesa.ctvvcare.payload.request.CustomerRequest;
+import com.venesa.ctvvcare.payload.response.CustomerRespone;
 import com.venesa.ctvvcare.service.CustomerService;
+import com.venesa.ctvvcare.service.ExcelExporterService;
 import com.venesa.ctvvcare.utils.ConstUtils;
 import com.venesa.ctvvcare.utils.ResponseData;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
-import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.security.Principal;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 /**
  * @author thuanlm
  * @created at 10/21/2020
  */
-@CrossOrigin
+//@CrossOrigin
 @RestController
 //@RequestMapping("/api/v1/customer")
 @Slf4j
@@ -89,10 +91,33 @@ public class CustomerController {
         }
     }
 
+    @GetMapping("/download")
+    public void exportExcel(HttpServletResponse response, Principal principal) {
+        log.info("=========Start export excel Customer ==========");
+        try {
+            response.setContentType("application/octet-stream");
+            DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss");
+            String currentDateTime = dateFormatter.format(new Date());
+
+            String headerKey = "Content-Disposition";
+            String headerValue = "attachment; filename=customers_" + currentDateTime + ".xlsx";
+            response.setHeader(headerKey, headerValue);
+            List<CustomerRespone> list = customerService.listCustomerByIntroduceCode(principal.getName());
+            ExcelExporterService excelExporter = new ExcelExporterService(list);
+
+            excelExporter.export(response);
+            log.info("=========End export excel Customer ==========");
+
+        } catch (Exception e) {
+            log.info("=========Err export excel Customer ==========");
+        }
+    }
+
     @GetMapping("/api/v1/customer")
     public ResponseEntity<?> myInfoCustomer(Principal principal) {
         log.info("=========Start create Customer ==========");
         try {
+
 //            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 //            User user = (User) authentication.getPrincipal();
             System.out.println("===== request=== " + principal.getName());

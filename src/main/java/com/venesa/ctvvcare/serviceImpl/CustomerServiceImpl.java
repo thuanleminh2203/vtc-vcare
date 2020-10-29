@@ -10,6 +10,7 @@ import com.venesa.ctvvcare.repository.CustomerRepository;
 import com.venesa.ctvvcare.repository.IntroduceRepository;
 import com.venesa.ctvvcare.repository.UserRepository;
 import com.venesa.ctvvcare.service.CustomerService;
+import com.venesa.ctvvcare.service.JwtUserDetailsService;
 import lombok.AllArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -31,19 +32,22 @@ public class CustomerServiceImpl implements CustomerService {
     private final IntroduceRepository introduceRepository;
     private final UserRepository userRepository;
     private final PasswordEncoder bcryptEncoder;
+    private final JwtUserDetailsService jwtUserDetailsService;
 
     @Override
 //    @Transactional(rollbackFor = Exception.class)
-    public void save(CustomerRequest request) {
+    public void save(CustomerRequest request) throws Exception {
         request.setCreatedDate(new Date());
-        CustomerEntity customerEntity = customerRepository.save(mapper.convertValue(request, CustomerEntity.class));
+        request.setCreatedBy("System-crm");
+        CustomerEntity entity = mapper.convertValue(request, CustomerEntity.class);
+        entity.setActive(true);
+        CustomerEntity customerEntity = customerRepository.save(entity);
         User user = new User();
+        user.setPassword(request.getPassword());
         user.setUsername(request.getEmail());
-        user.setPassword(bcryptEncoder.encode(request.getPassword()));
         user.setActive(true);
-        user.setResetPassword(true);
         user.setIntroductionCode(customerEntity.getIntroductionCode());
-        userRepository.save(user);
+        jwtUserDetailsService.save(user);
     }
 
     @Override

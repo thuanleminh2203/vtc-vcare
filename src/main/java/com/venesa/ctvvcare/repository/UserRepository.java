@@ -29,4 +29,7 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 
     @Query(value = "SELECT u.username FROM user u", nativeQuery = true)
     Page<UserDetailDTO> getUsername(Pageable pageable);
+
+    @Query(value = "SELECT * FROM user u where u.token_reset_password = ?1", nativeQuery=true)
+    User findByToken(String token);
 }

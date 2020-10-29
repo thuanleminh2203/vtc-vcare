@@ -1,23 +1,20 @@
 package com.venesa.ctvvcare.entity;
 
-import lombok.Getter;
-import lombok.Setter;
-
-import javax.persistence.*;
-import java.sql.Timestamp;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import java.util.Date;
 import java.util.Objects;
 
 /**
  * @author thuanlm
- * @created at 10/22/2020
+ * @created at 10/27/2020
  */
 @Entity
-@Table(name = "user", schema = "ctv-vcare", catalog = "")
 public class User {
     private int id;
     private String password;
-    private Timestamp timeToken;
     private String username;
     private String introductionCode;
     private Boolean isActive;
@@ -25,17 +22,12 @@ public class User {
     private String createdBy;
     private Date updatedDate;
     private String updatedBy;
-    @Getter
-    @Setter
-    @Column(name = "is_reset_password")
-    private boolean isResetPassword;
-    @Getter
-    @Setter
-    @Column(name = "role")
     private String role;
+    private String tokenResetPassword;
+    private Date expiryDateToken;
 
     @Id
-    @Column(name = "id", nullable = false)
+    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -45,7 +37,7 @@ public class User {
     }
 
     @Basic
-    @Column(name = "password", nullable = true, length = 255)
+    @Column(name = "password")
     public String getPassword() {
         return password;
     }
@@ -55,17 +47,7 @@ public class User {
     }
 
     @Basic
-    @Column(name = "time_token", nullable = true)
-    public Timestamp getTimeToken() {
-        return timeToken;
-    }
-
-    public void setTimeToken(Timestamp timeToken) {
-        this.timeToken = timeToken;
-    }
-
-    @Basic
-    @Column(name = "username", nullable = true, length = 255)
+    @Column(name = "username")
     public String getUsername() {
         return username;
     }
@@ -75,7 +57,7 @@ public class User {
     }
 
     @Basic
-    @Column(name = "introduction_code", nullable = true, length = 30)
+    @Column(name = "introduction_code")
     public String getIntroductionCode() {
         return introductionCode;
     }
@@ -85,7 +67,7 @@ public class User {
     }
 
     @Basic
-    @Column(name = "is_active", nullable = true)
+    @Column(name = "is_active")
     public Boolean getActive() {
         return isActive;
     }
@@ -95,7 +77,7 @@ public class User {
     }
 
     @Basic
-    @Column(name = "created_date", nullable = true)
+    @Column(name = "created_date")
     public Date getCreatedDate() {
         return createdDate;
     }
@@ -105,7 +87,7 @@ public class User {
     }
 
     @Basic
-    @Column(name = "created_by", nullable = true, length = 255)
+    @Column(name = "created_by")
     public String getCreatedBy() {
         return createdBy;
     }
@@ -115,7 +97,7 @@ public class User {
     }
 
     @Basic
-    @Column(name = "updated_date", nullable = true)
+    @Column(name = "updated_date")
     public Date getUpdatedDate() {
         return updatedDate;
     }
@@ -125,7 +107,7 @@ public class User {
     }
 
     @Basic
-    @Column(name = "updated_by", nullable = true, length = 255)
+    @Column(name = "updated_by")
     public String getUpdatedBy() {
         return updatedBy;
     }
@@ -134,25 +116,57 @@ public class User {
         this.updatedBy = updatedBy;
     }
 
+    @Basic
+    @Column(name = "role")
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    @Basic
+    @Column(name = "token_reset_password")
+    public String getTokenResetPassword() {
+        return tokenResetPassword;
+    }
+
+    public void setTokenResetPassword(String tokenResetPassword) {
+        this.tokenResetPassword = tokenResetPassword;
+    }
+
+    @Basic
+    @Column(name = "expiry_date_token")
+    public Date getExpiryDateToken() {
+        return expiryDateToken;
+    }
+
+    public void setExpiryDateToken(Date expiryDateToken) {
+        this.expiryDateToken = expiryDateToken;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        User that = (User) o;
-        return id == that.id &&
-                Objects.equals(password, that.password) &&
-                Objects.equals(timeToken, that.timeToken) &&
-                Objects.equals(username, that.username) &&
-                Objects.equals(introductionCode, that.introductionCode) &&
-                Objects.equals(isActive, that.isActive) &&
-                Objects.equals(createdDate, that.createdDate) &&
-                Objects.equals(createdBy, that.createdBy) &&
-                Objects.equals(updatedDate, that.updatedDate) &&
-                Objects.equals(updatedBy, that.updatedBy);
+        User user = (User) o;
+        return id == user.id &&
+                Objects.equals(password, user.password) &&
+                Objects.equals(username, user.username) &&
+                Objects.equals(introductionCode, user.introductionCode) &&
+                Objects.equals(isActive, user.isActive) &&
+                Objects.equals(createdDate, user.createdDate) &&
+                Objects.equals(createdBy, user.createdBy) &&
+                Objects.equals(updatedDate, user.updatedDate) &&
+                Objects.equals(updatedBy, user.updatedBy) &&
+                Objects.equals(role, user.role) &&
+                Objects.equals(tokenResetPassword, user.tokenResetPassword) &&
+                Objects.equals(expiryDateToken, user.expiryDateToken);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, password, timeToken, username, introductionCode, isActive, createdDate, createdBy, updatedDate, updatedBy);
+        return Objects.hash(id, password, username, introductionCode, isActive, createdDate, createdBy, updatedDate, updatedBy, role, tokenResetPassword, expiryDateToken);
     }
 }

@@ -25,18 +25,18 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @PostMapping("/register")
-    public ResponseEntity<?> register(@RequestBody UserDTO user) {
-        ResponseEntity<?> responseEntity;
-        try {
-            jwtUserDetailsService.save(user);
-            responseEntity = WapperDataResponse.sucsses(new ResponseData(ConstUtils.SUCCSESS, "", user));
-
-        } catch (Exception e) {
-            responseEntity = WapperDataResponse.err(new ResponseData(ConstUtils.ERROR, e.getMessage(), e.getMessage()), HttpStatus.BAD_REQUEST);
-        }
-        return responseEntity;
-    }
+//    @PostMapping("/register")
+//    public ResponseEntity<?> register(@RequestBody UserDTO user) {
+//        ResponseEntity<?> responseEntity;
+//        try {
+//            jwtUserDetailsService.save(user);
+//            responseEntity = WapperDataResponse.sucsses(new ResponseData(ConstUtils.SUCCSESS, "", user));
+//
+//        } catch (Exception e) {
+//            responseEntity = WapperDataResponse.err(new ResponseData(ConstUtils.ERROR, e.getMessage(), e.getMessage()), HttpStatus.BAD_REQUEST);
+//        }
+//        return responseEntity;
+//    }
 
 //    @GetMapping("get-username")
 //    public ResponseEntity<?> getUserName(@RequestParam(name = "page", required = false, defaultValue = "0") int page,

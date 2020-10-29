@@ -2,6 +2,7 @@ package com.venesa.ctvvcare.service;
 
 import com.venesa.ctvvcare.dto.EmailDTO;
 import com.venesa.ctvvcare.dto.JwtRequest;
+import com.venesa.ctvvcare.payload.request.ChangePasswordRequest;
 import com.venesa.ctvvcare.payload.request.EmailRequest;
 
 import javax.mail.MessagingException;
@@ -13,5 +14,5 @@ public interface EmailService {
 
 	 void resetPassword(EmailRequest rq) throws Exception;
 
-	 void changePassword(JwtRequest jwtRequest) throws Exception;
+	 void changePassword(ChangePasswordRequest jwtRequest) throws Exception;
 }

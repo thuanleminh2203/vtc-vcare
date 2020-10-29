@@ -1,6 +1,5 @@
 package com.venesa.ctvvcare.service;
 
-import com.venesa.ctvvcare.entity.CustomerEntity;
 import com.venesa.ctvvcare.payload.request.CustomerRequest;
 import com.venesa.ctvvcare.payload.response.CustomerRespone;
 

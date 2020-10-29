@@ -1,24 +1,22 @@
 package com.venesa.ctvvcare.entity;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
 /**
  * @author thuanlm
- * @created at 10/21/2020
+ * @created at 10/27/2020
  */
 @Entity
-@Table(name = "customer", schema = "ctv-vcare", catalog = "")
-public class CustomerEntity implements Serializable {
+@Table(name = "customer", schema = "ctv-vcare")
+public class CustomerEntity {
     private long customerId;
     private String introductionCode;
     private String phoneNumber;
     private String address;
     private String identifyCard;
     private String email;
-    private String password;
     private String bankName;
     private String bankAccountNumber;
     private String bankAccountName;
@@ -27,29 +25,12 @@ public class CustomerEntity implements Serializable {
     private String createdBy;
     private String updatedBy;
     private String customerName;
-    private boolean isActive = true;
+    private Boolean isActive;
     private String introduceCustomerCode;
 
-    @Column(name = "is_active")
-    public boolean isActive() {
-        return isActive;
-    }
-
-    public void setActive(boolean active) {
-        isActive = active;
-    }
-    @Column(name = "introduce_customer_code")
-    public String getIntroduceCustomerCode() {
-        return introduceCustomerCode;
-    }
-
-    public void setIntroduceCustomerCode(String introduceCustomerCode) {
-        this.introduceCustomerCode = introduceCustomerCode;
-    }
-
     @Id
+    @Column(name = "customer_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "customer_id", nullable = false)
     public long getCustomerId() {
         return customerId;
     }
@@ -59,7 +40,7 @@ public class CustomerEntity implements Serializable {
     }
 
     @Basic
-    @Column(name = "introduction_code", nullable = true, length = 30)
+    @Column(name = "introduction_code")
     public String getIntroductionCode() {
         return introductionCode;
     }
@@ -69,7 +50,7 @@ public class CustomerEntity implements Serializable {
     }
 
     @Basic
-    @Column(name = "phone_number", nullable = true, length = 15)
+    @Column(name = "phone_number")
     public String getPhoneNumber() {
         return phoneNumber;
     }
@@ -79,7 +60,7 @@ public class CustomerEntity implements Serializable {
     }
 
     @Basic
-    @Column(name = "address", nullable = true, length = -1)
+    @Column(name = "address")
     public String getAddress() {
         return address;
     }
@@ -89,7 +70,7 @@ public class CustomerEntity implements Serializable {
     }
 
     @Basic
-    @Column(name = "identify_card", nullable = true, length = 20)
+    @Column(name = "identify_card")
     public String getIdentifyCard() {
         return identifyCard;
     }
@@ -99,7 +80,7 @@ public class CustomerEntity implements Serializable {
     }
 
     @Basic
-    @Column(name = "email", nullable = true, length = -1)
+    @Column(name = "email")
     public String getEmail() {
         return email;
     }
@@ -108,18 +89,9 @@ public class CustomerEntity implements Serializable {
         this.email = email;
     }
 
-    @Basic
-    @Column(name = "password", nullable = true, length = 50)
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
     @Basic
-    @Column(name = "bank_name", nullable = true, length = 300)
+    @Column(name = "bank_name")
     public String getBankName() {
         return bankName;
     }
@@ -129,7 +101,7 @@ public class CustomerEntity implements Serializable {
     }
 
     @Basic
-    @Column(name = "bank_account_number", nullable = true, length = -1)
+    @Column(name = "bank_account_number")
     public String getBankAccountNumber() {
         return bankAccountNumber;
     }
@@ -139,7 +111,7 @@ public class CustomerEntity implements Serializable {
     }
 
     @Basic
-    @Column(name = "bank_account_name", nullable = true, length = 255)
+    @Column(name = "bank_account_name")
     public String getBankAccountName() {
         return bankAccountName;
     }
@@ -149,7 +121,7 @@ public class CustomerEntity implements Serializable {
     }
 
     @Basic
-    @Column(name = "created_date", nullable = true)
+    @Column(name = "created_date")
     public Date getCreatedDate() {
         return createdDate;
     }
@@ -159,7 +131,7 @@ public class CustomerEntity implements Serializable {
     }
 
     @Basic
-    @Column(name = "updated_date", nullable = true)
+    @Column(name = "updated_date")
     public Date getUpdatedDate() {
         return updatedDate;
     }
@@ -169,7 +141,7 @@ public class CustomerEntity implements Serializable {
     }
 
     @Basic
-    @Column(name = "created_by", nullable = true, length = 0)
+    @Column(name = "created_by")
     public String getCreatedBy() {
         return createdBy;
     }
@@ -179,7 +151,7 @@ public class CustomerEntity implements Serializable {
     }
 
     @Basic
-    @Column(name = "updated_by", nullable = true, length = 0)
+    @Column(name = "updated_by")
     public String getUpdatedBy() {
         return updatedBy;
     }
@@ -189,13 +161,33 @@ public class CustomerEntity implements Serializable {
     }
 
     @Basic
-    @Column(name = "customer_name", nullable = true, length = 255)
+    @Column(name = "customer_name")
     public String getCustomerName() {
         return customerName;
     }
 
     public void setCustomerName(String customerName) {
         this.customerName = customerName;
+    }
+
+    @Basic
+    @Column(name = "is_active")
+    public Boolean getActive() {
+        return isActive;
+    }
+
+    public void setActive(Boolean active) {
+        isActive = active;
+    }
+
+    @Basic
+    @Column(name = "introduce_customer_code")
+    public String getIntroduceCustomerCode() {
+        return introduceCustomerCode;
+    }
+
+    public void setIntroduceCustomerCode(String introduceCustomerCode) {
+        this.introduceCustomerCode = introduceCustomerCode;
     }
 
     @Override
@@ -209,7 +201,6 @@ public class CustomerEntity implements Serializable {
                 Objects.equals(address, that.address) &&
                 Objects.equals(identifyCard, that.identifyCard) &&
                 Objects.equals(email, that.email) &&
-                Objects.equals(password, that.password) &&
                 Objects.equals(bankName, that.bankName) &&
                 Objects.equals(bankAccountNumber, that.bankAccountNumber) &&
                 Objects.equals(bankAccountName, that.bankAccountName) &&
@@ -217,11 +208,13 @@ public class CustomerEntity implements Serializable {
                 Objects.equals(updatedDate, that.updatedDate) &&
                 Objects.equals(createdBy, that.createdBy) &&
                 Objects.equals(updatedBy, that.updatedBy) &&
-                Objects.equals(customerName, that.customerName);
+                Objects.equals(customerName, that.customerName) &&
+                Objects.equals(isActive, that.isActive) &&
+                Objects.equals(introduceCustomerCode, that.introduceCustomerCode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(customerId, introductionCode, phoneNumber, address, identifyCard, email, password, bankName, bankAccountNumber, bankAccountName, createdDate, updatedDate, createdBy, updatedBy, customerName);
+        return Objects.hash(customerId, introductionCode, phoneNumber, address, identifyCard, email, bankName, bankAccountNumber, bankAccountName, createdDate, updatedDate, createdBy, updatedBy, customerName, isActive, introduceCustomerCode);
     }
 }
