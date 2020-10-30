@@ -1,5 +1,6 @@
 package com.venesa.ctvvcare.service;
 
+import com.venesa.ctvvcare.config.UserPrincipal;
 import com.venesa.ctvvcare.dto.UserDTO;
 import com.venesa.ctvvcare.entity.User;
 import com.venesa.ctvvcare.repository.UserRepository;
@@ -27,6 +28,8 @@ public class JwtUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         User user = getUserByUsername(username);
+//        UserPrincipal userPrincipal = new UserPrincipal();
+//        userPrincipal.set
         List<GrantedAuthority> lst = new ArrayList<>();
         if (user.getRole() != null)
             lst.add(new SimpleGrantedAuthority(user.getRole()));

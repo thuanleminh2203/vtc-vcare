@@ -66,6 +66,12 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
+    public List<CustomerRespone> findAll() {
+        return mapper.convertValue(customerRepository.findAll(), new TypeReference<>() {
+        });
+    }
+
+    @Override
     public List<CustomerRespone> listCustomerByIntroduceCode(String username) throws Exception {
         String introduceCode = getIntroduceCodeByUsername(username);
         return mapper.convertValue(customerRepository.listCustomerByIntroduceCode(introduceCode), new TypeReference<>() {
@@ -74,7 +80,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public CustomerRespone myInfoCustomer(String username) {
-        return mapper.convertValue(customerRepository.myInfoCustomer(username),CustomerRespone.class);
+        return mapper.convertValue(customerRepository.myInfoCustomer(username), CustomerRespone.class);
     }
 
 }

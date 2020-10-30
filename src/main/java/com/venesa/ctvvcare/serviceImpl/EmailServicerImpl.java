@@ -61,7 +61,7 @@ public class EmailServicerImpl implements EmailService {
         userRepository.save(user);
         SimpleMailMessage message = new SimpleMailMessage();
         message.setSubject("Reset password ");
-        message.setText("Click this url for change password: 192.168.20.116:8088/change-password?token="+token);
+        message.setText("Click this url for change password: 192.168.20.116:8088/redirect-page-pwd/"+token);
         message.setTo(rq.getEmail());
         emailSender.send(message);
     }

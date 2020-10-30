@@ -19,26 +19,21 @@ import java.nio.charset.StandardCharsets;
 @Component
 public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint, Serializable {
 	private static final long serialVersionUID = -7858869558953243875L;
-	@Autowired
-	private ObjectMapper objectMapper;
 
 	@Override
 	public void commence(HttpServletRequest request, HttpServletResponse response,
-			AuthenticationException authException) throws IOException {
-		String expired = (String) request.getAttribute("expried");
-		ResponseData responseData = new ResponseData();
-		responseData.setErrorMessage("Invalid Login details");
-		if (expired != null) {
-			request.removeAttribute("expired");
-			responseData.setErrorMessage("JWT Token has expired");
-		}
-		responseData.setErrorCode(ConstUtils.ERROR);
-		response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-		response.setContentType(MediaType.APPLICATION_JSON_VALUE);
-		response.setCharacterEncoding(StandardCharsets.UTF_8.toString());
-		String json = objectMapper.writeValueAsString(responseData);
-		response.getWriter().write(json);
+						 AuthenticationException authException) {
 
+		ResponseData<Object> responseData = new ResponseData<>(ConstUtils.ERROR, HttpStatus.UNAUTHORIZED.getReasonPhrase(), null);
+		try{
+			response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+			response.setContentType(MediaType.APPLICATION_JSON_VALUE);
+			response.setCharacterEncoding(StandardCharsets.UTF_8.toString());
+			response.getWriter().write(new ObjectMapper().writeValueAsString(responseData));
+
+		}catch (Exception e) {
+			System.out.println("======errr======" + e.getMessage());
+		}
 	}
 
 }

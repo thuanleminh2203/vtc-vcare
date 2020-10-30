@@ -14,7 +14,7 @@ public interface CustomerService {
     Integer getIntroduceCodeMax() throws Exception;
     Long getIdCustomerIntroduce(String introduceCode) throws Exception;
     String getIntroduceCodeByUsername(String username) throws Exception;
-
+    List<CustomerRespone> findAll();
     List<CustomerRespone> listCustomerByIntroduceCode(String username) throws Exception;
 
     CustomerRespone myInfoCustomer(String username);

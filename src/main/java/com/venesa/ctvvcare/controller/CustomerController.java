@@ -11,10 +11,18 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.PostConstruct;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.security.Principal;
 import java.text.DateFormat;
@@ -78,12 +86,13 @@ public class CustomerController {
     public ResponseEntity<?> getCustomersLv2(Principal principal) {
         log.info("=========Start create Customer ==========");
         try {
-//            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-//            User user = (User) authentication.getPrincipal();
+            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+            User user = (User) authentication.getPrincipal();
+            var role = user.getAuthorities();
+            List<CustomerRespone> list = role.isEmpty() ?  customerService.listCustomerByIntroduceCode(principal.getName()) :  customerService.findAll();
             System.out.println("===== request=== " + principal.getName());
-//            customerService.listCustomerByIntroduceCode(principal.getName());
             log.info("=========End create Customer ==========");
-            return wrapperResponse.success(new ResponseData<>(ConstUtils.SUCCSESS, ConstUtils.SUCCSESS_MESS,  customerService.listCustomerByIntroduceCode(principal.getName())));
+            return wrapperResponse.success(new ResponseData<>(ConstUtils.SUCCSESS, ConstUtils.SUCCSESS_MESS,list));
 
         } catch (Exception e) {
             log.info("=========Err create Customer ==========");
@@ -92,7 +101,8 @@ public class CustomerController {
     }
 
     @GetMapping("/download")
-    public void exportExcel(HttpServletResponse response, Principal principal) {
+    @PreAuthorize("hasAnyRole('ROLE_CTV')")
+    public void exportExcel(HttpServletResponse response, Principal principal, HttpServletRequest req) {
         log.info("=========Start export excel Customer ==========");
         try {
             response.setContentType("application/octet-stream");
@@ -102,10 +112,12 @@ public class CustomerController {
             String headerKey = "Content-Disposition";
             String headerValue = "attachment; filename=customers_" + currentDateTime + ".xlsx";
             response.setHeader(headerKey, headerValue);
-            List<CustomerRespone> list = customerService.listCustomerByIntroduceCode(principal.getName());
+            List<CustomerRespone> list = customerService.findAll();
             ExcelExporterService excelExporter = new ExcelExporterService(list);
 
             excelExporter.export(response);
+//            response.sendRedirect(req.getContextPath() + "/login");
+            System.out.println("===rendridirect=====" + req.getContextPath());
             log.info("=========End export excel Customer ==========");
 
         } catch (Exception e) {
@@ -123,7 +135,7 @@ public class CustomerController {
             System.out.println("===== request=== " + principal.getName());
 //            customerService.listCustomerByIntroduceCode(principal.getName());
             log.info("=========End create Customer ==========");
-            return wrapperResponse.success(new ResponseData<>(ConstUtils.SUCCSESS, ConstUtils.SUCCSESS_MESS,  customerService.myInfoCustomer(principal.getName())));
+            return wrapperResponse.success(new ResponseData<>(ConstUtils.SUCCSESS, ConstUtils.SUCCSESS_MESS, customerService.myInfoCustomer(principal.getName())));
 
         } catch (Exception e) {
             log.info("=========Err create Customer ==========");

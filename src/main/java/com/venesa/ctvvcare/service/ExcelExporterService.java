@@ -38,11 +38,18 @@ public class ExcelExporterService {
         font.setFontHeight(16);
         style.setFont(font);
 
-        createCell(row, 0, "User ID", style);
-        createCell(row, 1, "E-mail", style);
-        createCell(row, 2, "Full Name", style);
-        createCell(row, 3, "Roles", style);
-        createCell(row, 4, "Enabled", style);
+        createCell(row, 0, "ID", style);
+        createCell(row, 1, "Mã giới thiệu", style);
+        createCell(row, 2, "Số điện thoại", style);
+        createCell(row, 3, "Địa chỉ", style);
+        createCell(row, 4, "Email", style);
+
+        createCell(row, 5, "Ngân hàng", style);
+        createCell(row, 6, "Số tài khoản", style);
+        createCell(row, 7, "Tên tài khoản", style);
+        createCell(row, 8, "Họ tên", style);
+        createCell(row, 9, "Trạng thái", style);
+
 
     }
 
@@ -78,13 +85,13 @@ public class ExcelExporterService {
             createCell(row, columnCount++, customer.getPhoneNumber(), style);
             createCell(row, columnCount++, customer.getAddress(), style);
             createCell(row, columnCount++, customer.getEmail(), style);
-            createCell(row, columnCount++, customer.getIntroductionCode(), style);
+//            createCell(row, columnCount++, customer.getIntroductionCode(), style);
 
             createCell(row, columnCount++, customer.getBankName(), style);
             createCell(row, columnCount++, customer.getBankAccountNumber(), style);
             createCell(row, columnCount++, customer.getBankAccountName(), style);
             createCell(row, columnCount++, customer.getCustomerName(), style);
-            createCell(row, columnCount++, customer.isActive(), style);
+            createCell(row, columnCount++, customer.isActive() ? "Hoạt Động" : "Đã vô hiệu hóa", style);
 
         }
     }

@@ -37,6 +37,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	private JwtRequestFilter jwtRequestFilter;
 
 	@Autowired
+	private CustomAccessDeniedHandler customAccessDeniedHandler;
+
+	@Autowired
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 		// configure AuthenticationManager so that it knows from where to load
 		// user for matching credentials
@@ -85,25 +88,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		// httpSecurity.csrf().disable();
 		// dont authenticate this particular request
 		httpSecurity.authorizeRequests()
-//				.antMatchers("/authenticate", "/register", "/secured/chat", "/chat/**", "/find-all","/secured/**","/secured/room").
-				.antMatchers("/download","/authenticate", "/register", "/secured/chat", "/chat/**", "/find-all","/secured/**","/secured/room","/","/api/v1/customer","/reset-password")
+				.antMatchers("/redirect-page-pwd/*","/download","/authenticate", "/register", "/secured/chat", "/chat/**", "/find-all","/secured/**","/secured/room","/","/api/v1/customer","/reset-password")
 				.permitAll()
 				.anyRequest().authenticated()
 				.and().sessionManagement()
 				.sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
 				.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class)
 				.exceptionHandling()
-				.authenticationEntryPoint(jwtAuthenticationEntryPoint);
-//		httpSecurity.authorizeRequests().antMatchers("/hello/**").access("hasRole('ROLE_ADMIN')");
-//		httpSecurity.authorizeRequests().anyRequest().authenticated();
-//		httpSecurity.authorizeRequests().and(). 
-		// make sure we use stateless session; session won't be used to
-		// store user's state.
-//				exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint).and().sessionManagement()
-//				.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+				.authenticationEntryPoint(jwtAuthenticationEntryPoint)
+		                .accessDeniedHandler(customAccessDeniedHandler).and().sessionManagement();
 
-		// Add a filter to validate the tokens with every request
-//		httpSecurity.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
 	}
 
 
