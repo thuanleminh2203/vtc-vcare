@@ -55,5 +55,11 @@ public class ValidatorUtils {
             error.rejectValue(nameField, null, nameField + " must be greater than" + min + " and less than " + max);
     }
 
+    public static void checkPageable(int page ,Errors error, String nameField ){
+        if(page < 0){
+            error.rejectValue(nameField, null, nameField + " must be greater than 0" );
+        }
+    }
+
 
 }

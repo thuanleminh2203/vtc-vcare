@@ -70,26 +70,26 @@ public class JwtAuthenticationController {
         return responseEntity;
     }
 
-    @PostMapping("/authenticate/signout")
-    public ResponseEntity<?> logoutUser(Principal principal) {
-        ResponseEntity<?> responseEntity;
-        try {
-//            Date date = jwtUserDetailsService.getTimeToken(principal.getName());
-//            if (date != null) {
-                jwtUserDetailsService.updateTimeTokenByUsername(principal.getName(), null);
-                responseEntity = WapperDataResponse.sucsses(new ResponseData<>(ConstUtils.SUCCSESS, "", null));
-//            } else {
-//                responseEntity = WapperDataResponse.err(new ResponseData<>(ConstUtils.ERROR, ConstUtils.ERR_BUSINESS, null), HttpStatus.BAD_REQUEST);
-//            }
-
-
-        } catch (Exception e) {
-            log.info("===== err ==" + e.getMessage());
-            responseEntity = WapperDataResponse.err(new ResponseData<>(ConstUtils.ERROR, e.getMessage(), null), HttpStatus.BAD_REQUEST);
-        }
-
-        return responseEntity;
-    }
+//    @PostMapping("/authenticate/signout")
+//    public ResponseEntity<?> logoutUser(Principal principal) {
+//        ResponseEntity<?> responseEntity;
+//        try {
+////            Date date = jwtUserDetailsService.getTimeToken(principal.getName());
+////            if (date != null) {
+//                jwtUserDetailsService.updateTimeTokenByUsername(principal.getName(), null);
+//                responseEntity = WapperDataResponse.sucsses(new ResponseData<>(ConstUtils.SUCCSESS, "", null));
+////            } else {
+////                responseEntity = WapperDataResponse.err(new ResponseData<>(ConstUtils.ERROR, ConstUtils.ERR_BUSINESS, null), HttpStatus.BAD_REQUEST);
+////            }
+//
+//
+//        } catch (Exception e) {
+//            log.info("===== err ==" + e.getMessage());
+//            responseEntity = WapperDataResponse.err(new ResponseData<>(ConstUtils.ERROR, e.getMessage(), null), HttpStatus.BAD_REQUEST);
+//        }
+//
+//        return responseEntity;
+//    }
 
     private void authenticate(String username, String password) throws Exception {
         try {

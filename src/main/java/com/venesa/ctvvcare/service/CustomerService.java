@@ -1,7 +1,7 @@
 package com.venesa.ctvvcare.service;
 
 import com.venesa.ctvvcare.payload.request.CustomerRequest;
-import com.venesa.ctvvcare.payload.response.CustomerRespone;
+import com.venesa.ctvvcare.payload.response.CustomerResponse;
 
 import java.util.List;
 
@@ -14,8 +14,8 @@ public interface CustomerService {
     Integer getIntroduceCodeMax() throws Exception;
     Long getIdCustomerIntroduce(String introduceCode) throws Exception;
     String getIntroduceCodeByUsername(String username) throws Exception;
-    List<CustomerRespone> findAll();
-    List<CustomerRespone> listCustomerByIntroduceCode(String username) throws Exception;
+    List<CustomerResponse> findAll();
+    List<CustomerResponse> listCustomerByIntroduceCode(String username) throws Exception;
 
-    CustomerRespone myInfoCustomer(String username);
+    CustomerResponse myInfoCustomer(String username);
 }

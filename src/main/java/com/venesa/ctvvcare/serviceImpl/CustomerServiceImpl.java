@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.venesa.ctvvcare.entity.CustomerEntity;
 import com.venesa.ctvvcare.entity.User;
 import com.venesa.ctvvcare.payload.request.CustomerRequest;
-import com.venesa.ctvvcare.payload.response.CustomerRespone;
+import com.venesa.ctvvcare.payload.response.CustomerResponse;
 import com.venesa.ctvvcare.repository.CustomerRepository;
 import com.venesa.ctvvcare.repository.IntroduceRepository;
 import com.venesa.ctvvcare.repository.UserRepository;
@@ -37,6 +37,10 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
 //    @Transactional(rollbackFor = Exception.class)
     public void save(CustomerRequest request) throws Exception {
+        if(request.getIntroduceCustomerCode() != null && !request.getIntroduceCustomerCode().isEmpty()){
+            if(getIdCustomerIntroduce(request.getIntroduceCustomerCode()) == null)
+                throw new Exception("Not found user with IntroduceCode: " + request.getIntroduceCustomerCode());
+        }
         request.setCreatedDate(new Date());
         request.setCreatedBy("System-crm");
         CustomerEntity entity = mapper.convertValue(request, CustomerEntity.class);
@@ -66,21 +70,21 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public List<CustomerRespone> findAll() {
+    public List<CustomerResponse> findAll() {
         return mapper.convertValue(customerRepository.findAll(), new TypeReference<>() {
         });
     }
 
     @Override
-    public List<CustomerRespone> listCustomerByIntroduceCode(String username) throws Exception {
+    public List<CustomerResponse> listCustomerByIntroduceCode(String username) throws Exception {
         String introduceCode = getIntroduceCodeByUsername(username);
         return mapper.convertValue(customerRepository.listCustomerByIntroduceCode(introduceCode), new TypeReference<>() {
         });
     }
 
     @Override
-    public CustomerRespone myInfoCustomer(String username) {
-        return mapper.convertValue(customerRepository.myInfoCustomer(username), CustomerRespone.class);
+    public CustomerResponse myInfoCustomer(String username) {
+        return mapper.convertValue(customerRepository.myInfoCustomer(username), CustomerResponse.class);
     }
 
 }

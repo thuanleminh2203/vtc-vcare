@@ -8,7 +8,7 @@ import java.util.Objects;
  * @created at 10/21/2020
  */
 @Entity
-@Table(name = "introduce", schema = "ctv-vcare", catalog = "")
+@Table(name = "introduce")
 public class IntroduceEntity {
     private long introduceId;
     private Long customerId;

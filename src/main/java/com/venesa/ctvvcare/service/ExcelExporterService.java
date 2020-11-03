@@ -1,6 +1,6 @@
 package com.venesa.ctvvcare.service;
 
-import com.venesa.ctvvcare.payload.response.CustomerRespone;
+import com.venesa.ctvvcare.payload.response.CustomerResponse;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.Row;
@@ -20,9 +20,9 @@ import java.util.List;
 public class ExcelExporterService {
     private XSSFWorkbook workbook;
     private XSSFSheet sheet;
-    private List<CustomerRespone> listCustomer;
+    private List<CustomerResponse> listCustomer;
 
-    public ExcelExporterService(List<CustomerRespone> listCustomer) {
+    public ExcelExporterService(List<CustomerResponse> listCustomer) {
         this.listCustomer = listCustomer;
         workbook = new XSSFWorkbook();
     }
@@ -76,7 +76,7 @@ public class ExcelExporterService {
         font.setFontHeight(14);
         style.setFont(font);
 
-        for (CustomerRespone customer : listCustomer) {
+        for (CustomerResponse customer : listCustomer) {
             Row row = sheet.createRow(rowCount++);
             int columnCount = 0;
 

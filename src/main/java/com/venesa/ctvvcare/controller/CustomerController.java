@@ -1,8 +1,10 @@
 package com.venesa.ctvvcare.controller;
 
 import com.venesa.ctvvcare.component.WrapperResponseData;
+import com.venesa.ctvvcare.payload.request.BaseRequest;
 import com.venesa.ctvvcare.payload.request.CustomerRequest;
-import com.venesa.ctvvcare.payload.response.CustomerRespone;
+import com.venesa.ctvvcare.payload.response.CustomerResponse;
+import com.venesa.ctvvcare.payload.response.ListCustomerResponse;
 import com.venesa.ctvvcare.service.CustomerService;
 import com.venesa.ctvvcare.service.ExcelExporterService;
 import com.venesa.ctvvcare.utils.ConstUtils;
@@ -16,10 +18,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
@@ -30,6 +29,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 /**
  * @author thuanlm
@@ -37,7 +37,7 @@ import java.util.Objects;
  */
 //@CrossOrigin
 @RestController
-//@RequestMapping("/api/v1/customer")
+@RequestMapping("/api/v1/ctv-vcare/customer")
 @Slf4j
 public class CustomerController {
     @Autowired
@@ -60,7 +60,10 @@ public class CustomerController {
         }
     }
 
-    @PostMapping("/api/v1/customer")
+    private List<CustomerResponse> filterByCondition(List<CustomerResponse> lst , BaseRequest rq){
+        return lst.stream().skip((rq.getPageIndex() - 1) * rq.getPageSize()).limit(rq.getPageSize()).collect(Collectors.toList());
+    }
+    @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody CustomerRequest rq, BindingResult result) {
         log.info("=========Start create Customer ==========");
         try {
@@ -82,17 +85,18 @@ public class CustomerController {
         }
     }
 
-    @GetMapping("/get")
-    public ResponseEntity<?> getCustomersLv2(Principal principal) {
+    @PostMapping("/search")
+    public ResponseEntity<?> getCustomersLv2(Principal principal, @RequestBody BaseRequest rq) {
         log.info("=========Start create Customer ==========");
         try {
             Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
             User user = (User) authentication.getPrincipal();
             var role = user.getAuthorities();
-            List<CustomerRespone> list = role.isEmpty() ?  customerService.listCustomerByIntroduceCode(principal.getName()) :  customerService.findAll();
+            var list = role.isEmpty() ?  customerService.listCustomerByIntroduceCode(principal.getName()) :  customerService.findAll();
+            List<CustomerResponse> dataResponse = rq.getPageIndex() == 0 ? list : filterByCondition(list,rq);
             System.out.println("===== request=== " + principal.getName());
             log.info("=========End create Customer ==========");
-            return wrapperResponse.success(new ResponseData<>(ConstUtils.SUCCSESS, ConstUtils.SUCCSESS_MESS,list));
+            return wrapperResponse.success(new ResponseData<>(ConstUtils.SUCCSESS, ConstUtils.SUCCSESS_MESS,new ListCustomerResponse(list.size(),dataResponse)));
 
         } catch (Exception e) {
             log.info("=========Err create Customer ==========");
@@ -100,32 +104,32 @@ public class CustomerController {
         }
     }
 
-    @GetMapping("/download")
-    @PreAuthorize("hasAnyRole('ROLE_CTV')")
-    public void exportExcel(HttpServletResponse response, Principal principal, HttpServletRequest req) {
-        log.info("=========Start export excel Customer ==========");
-        try {
-            response.setContentType("application/octet-stream");
-            DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss");
-            String currentDateTime = dateFormatter.format(new Date());
+//    @GetMapping("/download")
+//    @PreAuthorize("hasAnyRole('ROLE_CTV')")
+//    public void exportExcel(HttpServletResponse response, Principal principal, HttpServletRequest req) {
+//        log.info("=========Start export excel Customer ==========");
+//        try {
+//            response.setContentType("application/octet-stream");
+//            DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss");
+//            String currentDateTime = dateFormatter.format(new Date());
+//
+//            String headerKey = "Content-Disposition";
+//            String headerValue = "attachment; filename=customers_" + currentDateTime + ".xlsx";
+//            response.setHeader(headerKey, headerValue);
+//            List<CustomerResponse> list = customerService.findAll();
+//            ExcelExporterService excelExporter = new ExcelExporterService(list);
+//
+//            excelExporter.export(response);
+////            response.sendRedirect(req.getContextPath() + "/login");
+//            System.out.println("===rendridirect=====" + req.getContextPath());
+//            log.info("=========End export excel Customer ==========");
+//
+//        } catch (Exception e) {
+//            log.info("=========Err export excel Customer ==========");
+//        }
+//    }
 
-            String headerKey = "Content-Disposition";
-            String headerValue = "attachment; filename=customers_" + currentDateTime + ".xlsx";
-            response.setHeader(headerKey, headerValue);
-            List<CustomerRespone> list = customerService.findAll();
-            ExcelExporterService excelExporter = new ExcelExporterService(list);
-
-            excelExporter.export(response);
-//            response.sendRedirect(req.getContextPath() + "/login");
-            System.out.println("===rendridirect=====" + req.getContextPath());
-            log.info("=========End export excel Customer ==========");
-
-        } catch (Exception e) {
-            log.info("=========Err export excel Customer ==========");
-        }
-    }
-
-    @GetMapping("/api/v1/customer")
+    @GetMapping("/my-info")
     public ResponseEntity<?> myInfoCustomer(Principal principal) {
         log.info("=========Start create Customer ==========");
         try {

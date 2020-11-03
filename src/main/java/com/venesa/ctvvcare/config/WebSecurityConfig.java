@@ -88,7 +88,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		// httpSecurity.csrf().disable();
 		// dont authenticate this particular request
 		httpSecurity.authorizeRequests()
-				.antMatchers("/redirect-page-pwd/*","/download","/authenticate", "/register", "/secured/chat", "/chat/**", "/find-all","/secured/**","/secured/room","/","/api/v1/customer","/reset-password")
+				.antMatchers("/authenticate", "/register","/api/v1/ctv-vcare/email/**")
 				.permitAll()
 				.anyRequest().authenticated()
 				.and().sessionManagement()

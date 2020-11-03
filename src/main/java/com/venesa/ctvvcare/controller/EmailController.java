@@ -22,6 +22,7 @@ import java.io.IOException;
 @RestController
 @CrossOrigin
 @Slf4j
+@RequestMapping("/api/v1/ctv-vcare/email")
 public class EmailController {
 
     @Autowired
@@ -65,7 +66,7 @@ public class EmailController {
     public void redirectPageChangePassword(@PathVariable String token, HttpServletResponse response)  {
         try {
             response.setHeader("token", token);
-            response.sendRedirect("E:/sonmlll/Hara-Affiliates/public/change-password.html");
+            response.sendRedirect("E:/sonmlll/Hara-Affiliates/public/change-password.html?token="+token);
         } catch (Exception e) {
             log.error("==== Error when redirect page =====" + e.getMessage());
         }

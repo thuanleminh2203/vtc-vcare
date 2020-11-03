@@ -1,9 +1,6 @@
 package com.venesa.ctvvcare.entity;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 import java.util.Objects;
 
@@ -12,6 +9,7 @@ import java.util.Objects;
  * @created at 10/27/2020
  */
 @Entity
+@Table(name = "user", schema = "landingpage", catalog = "")
 public class User {
     private int id;
     private String password;

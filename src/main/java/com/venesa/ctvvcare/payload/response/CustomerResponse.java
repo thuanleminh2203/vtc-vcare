@@ -13,7 +13,7 @@ import java.io.Serializable;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CustomerRespone implements Serializable {
+public class CustomerResponse implements Serializable {
     private long customerId;
     private String introductionCode;
     private String phoneNumber;

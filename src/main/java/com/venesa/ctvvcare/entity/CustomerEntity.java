@@ -9,7 +9,7 @@ import java.util.Objects;
  * @created at 10/27/2020
  */
 @Entity
-@Table(name = "customer", schema = "ctv-vcare")
+@Table(name = "customer", schema = "landingpage", catalog = "")
 public class CustomerEntity {
     private long customerId;
     private String introductionCode;
