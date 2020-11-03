@@ -86,9 +86,16 @@ public class CustomerController {
     }
 
     @PostMapping("/search")
-    public ResponseEntity<?> getCustomersLv2(Principal principal, @RequestBody BaseRequest rq) {
+    public ResponseEntity<?> getCustomersLv2(Principal principal, @RequestBody BaseRequest rq, BindingResult result) {
         log.info("=========Start create Customer ==========");
         try {
+            rq.validate(rq, result);
+            if (result.hasErrors()) {
+                log.error("=========Exception update Appointment : validate ==========" + Objects.requireNonNull(result.getFieldError()).getDefaultMessage());
+                return wrapperResponse.error(
+                        new ResponseData<>(ConstUtils.ERROR, result.getFieldError().getDefaultMessage(), null),
+                        HttpStatus.BAD_REQUEST);
+            }
             Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
             User user = (User) authentication.getPrincipal();
             var role = user.getAuthorities();
