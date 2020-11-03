@@ -1,0 +1,369 @@
+body {
+    width: 100%;
+    font-family: Arial;
+    font-size: 10pt;
+    background-color: #ffffff;
+}
+
+table {
+    border: 1px solid #ccc;
+    border-collapse: collapse;
+}
+
+table th {
+    background-color: #F7F7F7;
+    color: #333;
+    font-weight: bold;
+}
+
+table th, table td {
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+#tblUserData tfoot th, #tblAnswerData tfoot th {
+    visibility: hidden;
+}
+
+#rowdata-table, #answer-table, #user-table {
+    visibility: hidden;
+}
+
+table.dataTable th {
+    border-bottom: 1px solid #333;
+    border-right: 1px solid #333;
+}
+
+table.dataTable td {
+    border-bottom: 1px solid #333;
+    border-right: 1px solid #333;
+}
+
+.filterIcon {
+    height: 16px;
+    width: 16px;
+}
+
+.modalFilter {
+    display: none;
+    height: auto;
+    background: #FFF;
+    border: solid 1px #ccc;
+    padding: 8px;
+    position: absolute;
+    z-index: 1001;
+}
+
+.modalFilter .modal-content1 {
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.modalFilter .modal-footer {
+    background: #FFF;
+    height: 35px;
+    padding-top: 6px;
+}
+
+.modalFilter .btn {
+    padding: 0 1em;
+    height: 28px;
+    line-height: 28px;
+    text-transform: none;
+}
+
+#mask {
+    display: none;
+    background: transparent;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    opacity: 1000;
+}
+
+.modal1 {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(255, 255, 255, .8) url('http://i.stack.imgur.com/FhHRx.gif') 50% 50% no-repeat;
+}
+
+/* When the body has the loading class, we turn
+the scrollbar off with overflow:hidden */
+
+body.loading .modal {
+    overflow: hidden;
+}
+
+/* Anytime the body has the loading class, our
+modal element will be visible */
+
+body.loading .modal {
+    display: block;
+}
+
+.nav-center {
+    margin-left: 46%;
+    font-size: 18px;
+}
+
+.col-left {
+    position: relative;
+    left: 25%;
+    margin-top: 15px;
+    overflow-wrap: break-word;
+}
+
+.col-right {
+    position: relative;
+    left: 12%;
+    margin-top: 15px;
+}
+
+@media only screen and (max-width: 992px) {
+    [class*="col-md-4"] {
+        width: 33.33333333%;
+        left: 10%;
+    }
+}
+
+@media only screen and (max-width: 1750px) {
+    [class*="col-md-4"] {
+        width: 33.33333333%;
+        left: 10%;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    [class*="col-md-8"] {
+        width: 66.66666667%;
+        left: 10%;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    [class*="nav-center"] {
+        margin-left: 20%;
+        font-size: 18px;
+    }
+}
+
+.input-field {
+    width: 50%;
+    font-family: Helvetica, Arial, sans-serif;
+    line-height: 18px;
+    font-size: 13px;
+    color: #444;
+}
+
+.description {
+    font-family: Helvetica, Arial, sans-serif;
+    line-height: 18px;
+    font-size: 13px;
+    color: #444;
+    overflow-wrap: break-word;
+    white-space: pre-line;
+    /* width: 15x; */
+}
+
+.btn-cancel {}
+
+.btn-submit {
+    font-size: 13px;
+    outline: none;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #479ccf;
+    border-color: #479ccf;
+}
+
+.footer-register {
+    left: 40%;
+}
+
+.login {
+    max-width: 100%;
+}
+
+.login label, .login {
+    color: #95a7b7;
+}
+
+.login {
+    margin: 2em 0;
+    display: inline-block;
+    vertical-align: middle;
+    white-space: normal;
+    text-align: left;
+    width: 340px;
+}
+
+form {
+    display: block;
+    margin-top: 0em;
+}
+
+.login input.form-control {
+    font-size: 15px;
+    border: 0;
+    color: #8295a7;
+    padding-left: 32px;
+}
+
+.login input.form-control {
+    font-size: 15px;
+    border: 0;
+    color: #8295a7;
+    padding-left: 32px;
+}
+
+.login .username {
+    background: url(data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20xmlns%3Asketch%3D%22http%3A%2F%2Fwww.bohemiancoding.com%2Fsketch%2Fns%22%20width%3D%2220px%22%20height%3D%2215px%22%20viewBox%3D%220%200%2020%2015%22%20version%3D%221.1%22%3E%3Ctitle%3Email2%3C%2Ftitle%3E%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%3Cdefs%2F%3E%3Cg%20id%3D%22Page-1%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%20sketch%3Atype%3D%22MSPage%22%3E%3Cg%20id%3D%22Login---Text-entered%22%20sketch%3Atype%3D%22MSArtboardGroup%22%20transform%3D%22translate%28-467.000000%2C%20-248.000000%29%22%20fill%3D%22%2395A7B7%22%3E%3Cg%20id%3D%22Fields%22%20sketch%3Atype%3D%22MSLayerGroup%22%20transform%3D%22translate%28437.000000%2C%20220.000000%29%22%3E%3Cg%20id%3D%22Email%22%20sketch%3Atype%3D%22MSShapeGroup%22%3E%3Cg%20id%3D%22mail2%22%20transform%3D%22translate%2830.000000%2C%2028.000000%29%22%3E%3Cpath%20d%3D%22M9.55307692%2C8.63%20C9.82%2C8.8375%2010.18%2C8.8375%2010.4469231%2C8.63%20L19.8107692%2C1.385%20C19.9423077%2C1.2825%2020.0023077%2C1.10083333%2019.9607692%2C0.930833333%20C19.8307692%2C0.395%2019.3815385%2C0%2018.8461538%2C0%20L1.15384615%2C0%20C0.618461538%2C0%200.169230769%2C0.395%200.0392307692%2C0.930833333%20C-0.00230769231%2C1.10083333%200.0576923077%2C1.2825%200.189230769%2C1.385%20L9.55307692%2C8.63%22%20id%3D%22Fill-1%22%2F%3E%3Cpath%20d%3D%22M19.3915385%2C3.75583333%20L10.4469231%2C10.6783333%20C10.3130769%2C10.7816667%2010.1569231%2C10.8333333%2010%2C10.8333333%20C9.84307692%2C10.8333333%209.68692308%2C10.7816667%209.55307692%2C10.6783333%20L0.608461538%2C3.75583333%20C0.353846154%2C3.55916667%200%2C3.75666667%200%2C4.095%20L0%2C13.75%20C0%2C14.44%200.516923077%2C15%201.15384615%2C15%20L18.8461538%2C15%20C19.4830769%2C15%2020%2C14.44%2020%2C13.75%20L20%2C4.095%20C20%2C3.75666667%2019.6461538%2C3.55916667%2019.3915385%2C3.75583333%22%20id%3D%22Fill-2%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E) no-repeat left center;
+    background-position-x: 5px;
+}
+
+.login .reset {
+    background: url(data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20xmlns%3Asketch%3D%22http%3A%2F%2Fwww.bohemiancoding.com%2Fsketch%2Fns%22%20width%3D%2217px%22%20height%3D%2220px%22%20viewBox%3D%220%200%2017%2020%22%20version%3D%221.1%22%3E%3Ctitle%3Elock%3C%2Ftitle%3E%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%3Cdefs%2F%3E%3Cg%20id%3D%22Page-1%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%20sketch%3Atype%3D%22MSPage%22%3E%3Cg%20id%3D%22Login---Text-entered%22%20sketch%3Atype%3D%22MSArtboardGroup%22%20transform%3D%22translate%28-467.000000%2C%20-316.000000%29%22%20fill%3D%22%2395A7B7%22%3E%3Cg%20id%3D%22Fields%22%20sketch%3Atype%3D%22MSLayerGroup%22%20transform%3D%22translate%28437.000000%2C%20220.000000%29%22%3E%3Cg%20id%3D%22Password%22%20transform%3D%22translate%280.000000%2C%2071.000000%29%22%20sketch%3Atype%3D%22MSShapeGroup%22%3E%3Cpath%20d%3D%22M45.725%2C33.3333333%20L45.3%2C33.3333333%20L45.3%2C31.875%20C45.3%2C28.02%2042.3131%2C25%2038.5%2C25%20C34.6869%2C25%2031.7%2C28.02%2031.7%2C31.875%20L31.7%2C33.3333333%20L31.275%2C33.3333333%20C30.5712%2C33.3333333%2030%2C33.8933333%2030%2C34.5833333%20L30%2C43.75%20C30%2C44.44%2030.5712%2C45%2031.275%2C45%20L45.725%2C45%20C46.4288%2C45%2047%2C44.44%2047%2C43.75%20L47%2C34.5833333%20C47%2C33.8933333%2046.4288%2C33.3333333%2045.725%2C33.3333333%20L45.725%2C33.3333333%20Z%20M34.25%2C31.875%20C34.25%2C29.3808333%2036.07665%2C27.5%2038.5%2C27.5%20C40.92335%2C27.5%2042.75%2C29.3808333%2042.75%2C31.875%20L42.75%2C33.3333333%20L34.25%2C33.3333333%20L34.25%2C31.875%20L34.25%2C31.875%20Z%20M40.2%2C40.0166667%20C40.2%2C40.9275%2039.44605%2C41.6666667%2038.517%2C41.6666667%20L38.483%2C41.6666667%20C37.55395%2C41.6666667%2036.8%2C40.9275%2036.8%2C40.0166667%20L36.8%2C38.3166667%20C36.8%2C37.4058333%2037.55395%2C36.6666667%2038.483%2C36.6666667%20L38.517%2C36.6666667%20C39.44605%2C36.6666667%2040.2%2C37.4058333%2040.2%2C38.3166667%20L40.2%2C40.0166667%20L40.2%2C40.0166667%20Z%22%20id%3D%22lock%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E) no-repeat left center;
+    background-position-x: 5px;
+}
+
+.login input.form-control {
+    font-size: 15px;
+    border: 0;
+    color: #8295a7;
+    padding-left: 32px;
+}
+
+.login input.form-control {
+    font-size: 15px;
+    border: 0;
+    color: #8295a7;
+    padding-left: 32px;
+}
+
+.login .Password {
+    background: url(data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20xmlns%3Asketch%3D%22http%3A%2F%2Fwww.bohemiancoding.com%2Fsketch%2Fns%22%20width%3D%2217px%22%20height%3D%2220px%22%20viewBox%3D%220%200%2017%2020%22%20version%3D%221.1%22%3E%3Ctitle%3Elock%3C%2Ftitle%3E%3Cdesc%3ECreated%20with%20Sketch.%3C%2Fdesc%3E%3Cdefs%2F%3E%3Cg%20id%3D%22Page-1%22%20stroke%3D%22none%22%20stroke-width%3D%221%22%20fill%3D%22none%22%20fill-rule%3D%22evenodd%22%20sketch%3Atype%3D%22MSPage%22%3E%3Cg%20id%3D%22Login---Text-entered%22%20sketch%3Atype%3D%22MSArtboardGroup%22%20transform%3D%22translate%28-467.000000%2C%20-316.000000%29%22%20fill%3D%22%2395A7B7%22%3E%3Cg%20id%3D%22Fields%22%20sketch%3Atype%3D%22MSLayerGroup%22%20transform%3D%22translate%28437.000000%2C%20220.000000%29%22%3E%3Cg%20id%3D%22Password%22%20transform%3D%22translate%280.000000%2C%2071.000000%29%22%20sketch%3Atype%3D%22MSShapeGroup%22%3E%3Cpath%20d%3D%22M45.725%2C33.3333333%20L45.3%2C33.3333333%20L45.3%2C31.875%20C45.3%2C28.02%2042.3131%2C25%2038.5%2C25%20C34.6869%2C25%2031.7%2C28.02%2031.7%2C31.875%20L31.7%2C33.3333333%20L31.275%2C33.3333333%20C30.5712%2C33.3333333%2030%2C33.8933333%2030%2C34.5833333%20L30%2C43.75%20C30%2C44.44%2030.5712%2C45%2031.275%2C45%20L45.725%2C45%20C46.4288%2C45%2047%2C44.44%2047%2C43.75%20L47%2C34.5833333%20C47%2C33.8933333%2046.4288%2C33.3333333%2045.725%2C33.3333333%20L45.725%2C33.3333333%20Z%20M34.25%2C31.875%20C34.25%2C29.3808333%2036.07665%2C27.5%2038.5%2C27.5%20C40.92335%2C27.5%2042.75%2C29.3808333%2042.75%2C31.875%20L42.75%2C33.3333333%20L34.25%2C33.3333333%20L34.25%2C31.875%20L34.25%2C31.875%20Z%20M40.2%2C40.0166667%20C40.2%2C40.9275%2039.44605%2C41.6666667%2038.517%2C41.6666667%20L38.483%2C41.6666667%20C37.55395%2C41.6666667%2036.8%2C40.9275%2036.8%2C40.0166667%20L36.8%2C38.3166667%20C36.8%2C37.4058333%2037.55395%2C36.6666667%2038.483%2C36.6666667%20L38.517%2C36.6666667%20C39.44605%2C36.6666667%2040.2%2C37.4058333%2040.2%2C38.3166667%20L40.2%2C40.0166667%20L40.2%2C40.0166667%20Z%22%20id%3D%22lock%22%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E) no-repeat left center;
+    background-position-x: 5px;
+}
+
+.login .list-group-item.text-center button {
+    width: 100%;
+    background: #479CCF;
+    border: 0;
+    height: 53px;
+    line-height: 43px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 300;
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+}
+
+.login .list-group-item:first-child {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+.login .list-group-item.text-center {
+    padding: 0px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #479CCF;
+}
+
+hide:not(.ng-hide-animate) {
+    display: none !important;
+}
+
+.system-Error {
+    margin-top: 15px;
+}
+
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.login {
+    margin-left: 40%;
+    margin: 2em 0;
+    display: inline-block;
+    vertical-align: middle;
+    white-space: normal;
+    text-align: left;
+    width: 340px;
+    color: #95a7b7;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.row {
+    left: 40%;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.m-t-sm {
+    margin-top: 10px;
+}
+
+@media only screen and (max-width: 992px) {
+    [class*="login"] {
+        margin-left: -25%;
+    }
+}
+
+/* @media only screen and (max-width: 1024px) {
+    [class*="login"] {
+        margin-left: -15%;
+    }
+} */
+
+.row-custom {
+    margin-bottom: 15px;
+}

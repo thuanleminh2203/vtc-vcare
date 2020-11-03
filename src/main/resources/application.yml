@@ -18,6 +18,18 @@ spring:
     name: gateway
   main:
     allow-bean-definition-overriding: true
+  resources:
+    static-locations: /static/**
+#  thymeleaf:
+#    cache: false
+#    check-template: true
+#    check-template-location: true
+#    content-type: text/html
+#    enabled: true
+#    encoding: UTF-8
+#    mode: HTML5
+#    prefix: /template
+#    suffix: .html
 #  datasource:
 #    url: jdbc:mysql://127.0.0.1:3306/ctv-vcare
 #    username: root

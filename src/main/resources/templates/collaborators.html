@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<body onload="getCTV()">
+
+    <head>
+        <!-- removed -->
+        <!-- <script type="text/javascript" href="https://code.jquery.com/jquery-3.3.1.js"></script> -->
+        <!-- <script type="text/javascript" charset="utf8"
+    src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script> -->
+
+        <!-- Jquery -->
+        <script src="static/js/jquery-3.4.1.min.js"></script>
+
+        <!-- Datatable -->
+        <link rel="stylesheet" href="static/css/fixedHeader.dataTables.min.css">
+        <link rel="stylesheet" type="text/css" href="static/css/jquery.dataTables.css">
+        <script type="text/javascript" src="static/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="static/js/dataTables.fixedHeader.min.js"></script>
+        <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script> -->
+
+        <!-- Bootstrap 4 -->
+        <link rel="stylesheet" href="static/css/bootstrap.min.css">
+        <script src="static/js/popper.min.js"></script>
+        <script src="static/js/bootstrap.min.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="static/style.css">
+    </head>
+
+
+    <div class="d-flex justify-content-center">
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+
+
+
+    <div class="container" style="padding: 0px 0px 0px 0px;">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <!-- Brand/logo -->
+            <a class="navbar-brand" href="#">V-CARE</a>
+
+            <!-- Links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Danh sách CTV</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="C:/Users/sonvsh/Documents/Hara-Affiliates/public/my-info.html">Thông
+                        tin cá nhân</a>
+                </li>
+                <li class="nav-item" style="position: absolute; margin-left: 82%;">
+                    <span class="nav-link" style="display: inline-flex;">
+                        <i class="material-icons">&#xe7fd;</i>
+                        <a class="nav-link" href="" style="margin-top: -5px;">Đăng xuất</a>
+                    </span>
+                </li>
+            </ul>
+        </nav>
+        <div class="table-wrapper">
+            <div class="table-title">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h2>DANH SÁCH CỘNG TÁC VIÊN</h2>
+                    </div>
+                    <div class="col-sm-6">
+                        <button id="btnExport" onclick="downloadDataExcel()" class="btn btn-success"><i
+                                class="material-icons">&#xe0c3;</i>
+                            <span>Export
+                                Excel</span></button>
+                    </div>
+                </div>
+            </div>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Họ và tên</th>
+                        <th>Địa chỉ</th>
+                        <th>Email</th>
+                        <th>Số điện thoạie</th>
+                        <th>Mã giới thiệu</th>
+                        <th>Chứng minh nhân dân</th>
+                        <th>Tên ngân hàng</th>
+                        <th>Tên tài khoản</th>
+                        <th>Số tài khoản</th>
+                        <th>Trạng thái</th>
+                        <!-- <th>Actions</th> -->
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+
+                    <!-- <tr>
+                        <td>
+                            <span class="custom-checkbox">
+                                <input type="checkbox" id="checkbox1" name="options[]" value="1">
+                                <label for="checkbox1"></label>
+                            </span>
+                        </td>
+                        <td>Đinh Quang A</td>
+                        <td>1, Đường A, P.7, Q. Tân Bình, TP. Hồ Chí Minh</td>
+                        <td>dinhquanga@yahoo.com</td>
+                        <td>01234567890</td>
+                        <td>10000</td>
+                        <td>10</td>
+                        <td>267349156</td>
+                        <td>VietComBank</td>
+                        <td>Dinh Quang A</td>
+                        <td>563229582313</td>
+                        <td>Đã vô hiệu hóa</td>
+                        <td>
+                            <a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons"
+                                    data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                            <a href="#deleteEmployeeModal" class="delete" data-toggle="modal"><i class="material-icons"
+                                    data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                        </td>
+                    </tr> -->
+
+                </tbody>
+            </table>
+            <div class="clearfix">
+                <div id="hint-text" class="hint-text"></div>
+                <ul id="pagination" class="pagination">
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Edit Modal HTML -->
+    <div id="addEmployeeModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">
+                        <h4 class="modal-title">Add Employee</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Address</label>
+                            <textarea class="form-control" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                        <input type="submit" class="btn btn-success" value="Add">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Edit Modal HTML -->
+    <div id="editEmployeeModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">
+                        <h4 class="modal-title">Edit Employee</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Address</label>
+                            <textarea class="form-control" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                        <input type="submit" class="btn btn-info" value="Save">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Delete Modal HTML -->
+    <div id="deleteEmployeeModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">
+                        <h4 class="modal-title">Delete Employee</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Are you sure you want to delete these Records?</p>
+                        <p class="text-warning"><small>This action cannot be undone.</small></p>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                        <input type="submit" class="btn btn-danger" value="Delete">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal1">
+        <!-- Place at bottom of page -->
+    </div>
+</body>
+
+<script type="text/javascript" src="static/js/xlsx.full.min.js"></script>
+<script type="text/javascript" src="static/js/jszip.js"></script>
+<script type="text/javascript" src="static/js/xlsx-populate.min.js"></script>
+<script type="text/javascript" src="static/js/collaborator.js"> </script>
+
+<link rel="stylesheet" href="static/css/bootstrap-select.css">
+<link rel="stylesheet" href="static/css/coll.css">
+<script src="static/js/bootstrap-select.js"></script>
+
+</html>
