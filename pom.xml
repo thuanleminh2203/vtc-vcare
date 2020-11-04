@@ -15,6 +15,8 @@
     <description>Project for retails</description>
 
     <properties>
+    	<thymeleaf-layout-dialect.version>2.4.1</thymeleaf-layout-dialect.version>
+		<thymeleaf-with-dialect.version>3.0.1</thymeleaf-with-dialect.version>
         <java.version>11</java.version>
     </properties>
 
@@ -77,6 +79,15 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-thymeleaf</artifactId>
         </dependency>
+        <dependency>
+			<groupId>nz.net.ultraq.thymeleaf</groupId>
+			<artifactId>thymeleaf-layout-dialect</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>ch.mfrey.thymeleaf.extras.with</groupId>
+			<artifactId>thymeleaf-with-dialect</artifactId>
+			<version>${thymeleaf-with-dialect.version}</version>
+		</dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>

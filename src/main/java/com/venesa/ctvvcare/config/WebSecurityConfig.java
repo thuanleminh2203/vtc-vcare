@@ -86,7 +86,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         String[] resources = new String[]{
                 "/", "/css/**", "/fonts/**", "/icons/**", "/img/**",
-                "/favicon.ico", "/js/**", "/pages/**", "/error", "/static/**", "/resources/**"
+                "/favicon.ico", "/js/**", "/error", "/style.css"
         };
 
 
@@ -109,6 +109,4 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .accessDeniedHandler(customAccessDeniedHandler).and().sessionManagement();
 
     }
-
-
 }

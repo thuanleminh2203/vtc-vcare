@@ -1,0 +1,691 @@
+2020-11-04 09:15:01.010  INFO 21591 --- [restartedMain] com.venesa.ctvvcare.CtvVcareApplication  : Starting CtvVcareApplication on iMacSpring.local with PID 21591 (/Users/nguyenvanhuu/Documents/spring/vtc-vcare/target/classes started by nguyenvanhuu in /Users/nguyenvanhuu/Documents/spring/vtc-vcare)
+2020-11-04 09:15:01.016  INFO 21591 --- [restartedMain] com.venesa.ctvvcare.CtvVcareApplication  : No active profile set, falling back to default profiles: default
+2020-11-04 09:15:01.168  INFO 21591 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-11-04 09:15:01.169  INFO 21591 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-11-04 09:15:03.538  INFO 21591 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-11-04 09:15:03.797  INFO 21591 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 211ms. Found 4 JPA repository interfaces.
+2020-11-04 09:15:04.792  INFO 21591 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@59af8055' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-04 09:15:04.811  INFO 21591 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-04 09:15:05.600  INFO 21591 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (http)
+2020-11-04 09:15:05.630  INFO 21591 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-11-04 09:15:05.631  INFO 21591 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-04 09:15:05.829  INFO 21591 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-11-04 09:15:05.830  INFO 21591 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4660 ms
+2020-11-04 09:15:05.996  WARN 21591 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-04 09:15:06.360  INFO 21591 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-04 09:15:06.509  INFO 21591 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-04 09:15:06.831  INFO 21591 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-11-04 09:15:06.910  INFO 21591 --- [restartedMain] c.v.c.controller.CustomerController      : =========Start get Introduce code max  ==========
+2020-11-04 09:15:07.562  INFO 21591 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-11-04 09:15:07.985  INFO 21591 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-11-04 09:15:08.622  INFO 21591 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-11-04 09:15:08.785  INFO 21591 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2020-11-04 09:15:11.003  INFO 21591 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-04 09:15:11.028  INFO 21591 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-04 09:15:12.054  INFO 21591 --- [restartedMain] c.v.c.controller.CustomerController      : =========End get Introduce code max  ==========: 100934
+2020-11-04 09:15:12.130  INFO 21591 --- [restartedMain] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static final org.slf4j.Logger com.venesa.ctvvcare.controller.JwtAuthenticationController.log
+2020-11-04 09:15:12.994  INFO 21591 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@25d30aef, org.springframework.security.web.context.SecurityContextPersistenceFilter@5e19fb57, org.springframework.security.web.header.HeaderWriterFilter@6df934f2, org.springframework.web.filter.CorsFilter@178767ca, org.springframework.security.web.authentication.logout.LogoutFilter@449af2, com.venesa.ctvvcare.config.JwtRequestFilter@4ad6580, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@76d7e8e4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4a0e439, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@15769a73, org.springframework.security.web.session.SessionManagementFilter@76bbbb15, org.springframework.security.web.access.ExceptionTranslationFilter@7fefd73d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5ed7b1f8]
+2020-11-04 09:15:13.341  INFO 21591 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-11-04 09:15:13.403  INFO 21591 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8088 (http) with context path ''
+2020-11-04 09:15:13.407  INFO 21591 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-11-04 09:15:13.741  INFO 21591 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-11-04 09:15:13.759  INFO 21591 --- [restartedMain] com.venesa.ctvvcare.CtvVcareApplication  : Started CtvVcareApplication in 14.341 seconds (JVM running for 15.796)
+2020-11-04 09:15:43.125  INFO 21591 --- [http-nio-8088-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-04 09:15:43.128  INFO 21591 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-11-04 09:15:43.158  INFO 21591 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 29 ms
+2020-11-04 09:15:43.209  WARN 21591 --- [http-nio-8088-exec-1] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:15:44.413  WARN 21591 --- [http-nio-8088-exec-2] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:15:44.434  WARN 21591 --- [http-nio-8088-exec-5] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:15:44.434  WARN 21591 --- [http-nio-8088-exec-7] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:15:44.434  WARN 21591 --- [http-nio-8088-exec-6] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:15:44.439  WARN 21591 --- [http-nio-8088-exec-4] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:15:44.440  WARN 21591 --- [http-nio-8088-exec-3] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:15:44.657  WARN 21591 --- [http-nio-8088-exec-8] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:15:44.658  WARN 21591 --- [http-nio-8088-exec-9] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:15:44.666  WARN 21591 --- [http-nio-8088-exec-8] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:15:44.670  WARN 21591 --- [http-nio-8088-exec-9] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:15:44.686  WARN 21591 --- [http-nio-8088-exec-10] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:15:44.686  WARN 21591 --- [http-nio-8088-exec-8] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:15:44.686  WARN 21591 --- [http-nio-8088-exec-9] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:15:44.687  WARN 21591 --- [http-nio-8088-exec-11] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:15:44.703  WARN 21591 --- [http-nio-8088-exec-1] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:15:44.717  WARN 21591 --- [http-nio-8088-exec-8] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:15:44.717  WARN 21591 --- [http-nio-8088-exec-7] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:15:44.729  WARN 21591 --- [http-nio-8088-exec-4] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:15:44.730  WARN 21591 --- [http-nio-8088-exec-3] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:15:44.744  WARN 21591 --- [http-nio-8088-exec-6] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:15:44.756  WARN 21591 --- [http-nio-8088-exec-5] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:15:44.769  WARN 21591 --- [http-nio-8088-exec-2] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:15:44.779  WARN 21591 --- [http-nio-8088-exec-10] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:15:44.791  WARN 21591 --- [http-nio-8088-exec-9] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:15:44.805  WARN 21591 --- [http-nio-8088-exec-11] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:15:44.812  WARN 21591 --- [http-nio-8088-exec-8] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:15:44.964  WARN 21591 --- [http-nio-8088-exec-1] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:15:44.976  WARN 21591 --- [http-nio-8088-exec-3] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:15:44.989  WARN 21591 --- [http-nio-8088-exec-7] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:15:45.001  WARN 21591 --- [http-nio-8088-exec-4] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:15:45.015  WARN 21591 --- [http-nio-8088-exec-6] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:15:45.030  WARN 21591 --- [http-nio-8088-exec-5] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:15:45.148  WARN 21591 --- [http-nio-8088-exec-2] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:15:48.912  WARN 21591 --- [http-nio-8088-exec-10] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:15:48.913  WARN 21591 --- [http-nio-8088-exec-9] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:15:48.940  WARN 21591 --- [http-nio-8088-exec-11] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:15:48.947  WARN 21591 --- [http-nio-8088-exec-11] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:15:48.948  WARN 21591 --- [http-nio-8088-exec-8] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:16:00.281  WARN 21591 --- [http-nio-8088-exec-3] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:26:22.518  INFO 21591 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-04 09:26:22.528  INFO 21591 --- [Thread-5] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-04 09:26:22.533  INFO 21591 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-11-04 09:26:22.564  INFO 21591 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-11-04 09:26:22.726  INFO 21591 --- [restartedMain] com.venesa.ctvvcare.CtvVcareApplication  : Starting CtvVcareApplication on iMacSpring.local with PID 21591 (/Users/nguyenvanhuu/Documents/spring/vtc-vcare/target/classes started by nguyenvanhuu in /Users/nguyenvanhuu/Documents/spring/vtc-vcare)
+2020-11-04 09:26:22.727  INFO 21591 --- [restartedMain] com.venesa.ctvvcare.CtvVcareApplication  : No active profile set, falling back to default profiles: default
+2020-11-04 09:26:23.331  INFO 21591 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-11-04 09:26:23.384  INFO 21591 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 52ms. Found 4 JPA repository interfaces.
+2020-11-04 09:26:23.545  INFO 21591 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@937632b' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-04 09:26:23.549  INFO 21591 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-04 09:26:23.665  INFO 21591 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (http)
+2020-11-04 09:26:23.667  INFO 21591 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-11-04 09:26:23.668  INFO 21591 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-04 09:26:23.700  INFO 21591 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-11-04 09:26:23.701  INFO 21591 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 969 ms
+2020-11-04 09:26:23.769  WARN 21591 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-04 09:26:23.830  INFO 21591 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-04 09:26:23.845  INFO 21591 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-04 09:26:23.862  INFO 21591 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2020-11-04 09:26:23.964  INFO 21591 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2020-11-04 09:26:23.965  INFO 21591 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2020-11-04 09:26:24.035  INFO 21591 --- [restartedMain] c.v.c.controller.CustomerController      : =========Start get Introduce code max  ==========
+2020-11-04 09:26:24.166  INFO 21591 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-04 09:26:24.167  INFO 21591 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-04 09:26:24.313  INFO 21591 --- [restartedMain] c.v.c.controller.CustomerController      : =========End get Introduce code max  ==========: 100934
+2020-11-04 09:26:24.351  INFO 21591 --- [restartedMain] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static final org.slf4j.Logger com.venesa.ctvvcare.controller.JwtAuthenticationController.log
+2020-11-04 09:26:24.472  INFO 21591 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@16581c46, org.springframework.security.web.context.SecurityContextPersistenceFilter@6ed6f634, org.springframework.security.web.header.HeaderWriterFilter@2fa7c80e, org.springframework.web.filter.CorsFilter@10b2ea97, org.springframework.security.web.authentication.logout.LogoutFilter@35d79208, com.venesa.ctvvcare.config.JwtRequestFilter@7f154b0f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@252ecc3c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@34d8972f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4997a033, org.springframework.security.web.session.SessionManagementFilter@1799fe15, org.springframework.security.web.access.ExceptionTranslationFilter@621524c6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1ba65621]
+2020-11-04 09:26:24.586  INFO 21591 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-11-04 09:26:24.607  INFO 21591 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8088 (http) with context path ''
+2020-11-04 09:26:24.608  INFO 21591 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-11-04 09:26:24.731  INFO 21591 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-11-04 09:26:24.738  INFO 21591 --- [restartedMain] com.venesa.ctvvcare.CtvVcareApplication  : Started CtvVcareApplication in 2.079 seconds (JVM running for 686.738)
+2020-11-04 09:26:24.743  INFO 21591 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-11-04 09:26:51.425  INFO 21591 --- [Thread-8] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-04 09:26:51.426  INFO 21591 --- [Thread-8] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-04 09:26:51.427  INFO 21591 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2020-11-04 09:26:51.437  INFO 21591 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2020-11-04 09:26:51.585  INFO 21591 --- [restartedMain] com.venesa.ctvvcare.CtvVcareApplication  : Starting CtvVcareApplication on iMacSpring.local with PID 21591 (/Users/nguyenvanhuu/Documents/spring/vtc-vcare/target/classes started by nguyenvanhuu in /Users/nguyenvanhuu/Documents/spring/vtc-vcare)
+2020-11-04 09:26:51.586  INFO 21591 --- [restartedMain] com.venesa.ctvvcare.CtvVcareApplication  : No active profile set, falling back to default profiles: default
+2020-11-04 09:26:51.908  INFO 21591 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-11-04 09:26:51.952  INFO 21591 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43ms. Found 4 JPA repository interfaces.
+2020-11-04 09:26:52.077  INFO 21591 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@fc956e3' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-04 09:26:52.080  INFO 21591 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-04 09:26:52.170  INFO 21591 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (http)
+2020-11-04 09:26:52.171  INFO 21591 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-11-04 09:26:52.172  INFO 21591 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-04 09:26:52.196  INFO 21591 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-11-04 09:26:52.197  INFO 21591 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 606 ms
+2020-11-04 09:26:52.260  WARN 21591 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-04 09:26:52.314  INFO 21591 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-04 09:26:52.328  INFO 21591 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-04 09:26:52.354  INFO 21591 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2020-11-04 09:26:52.458  INFO 21591 --- [restartedMain] c.v.c.controller.CustomerController      : =========Start get Introduce code max  ==========
+2020-11-04 09:26:52.773  INFO 21591 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2020-11-04 09:26:52.774  INFO 21591 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2020-11-04 09:26:52.948  INFO 21591 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-04 09:26:52.949  INFO 21591 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-04 09:26:54.155  INFO 21591 --- [restartedMain] c.v.c.controller.CustomerController      : =========End get Introduce code max  ==========: 100934
+2020-11-04 09:26:54.189  INFO 21591 --- [restartedMain] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static final org.slf4j.Logger com.venesa.ctvvcare.controller.JwtAuthenticationController.log
+2020-11-04 09:26:54.309  INFO 21591 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@186ffe56, org.springframework.security.web.context.SecurityContextPersistenceFilter@65b8578a, org.springframework.security.web.header.HeaderWriterFilter@7de8844f, org.springframework.web.filter.CorsFilter@1428de81, org.springframework.security.web.authentication.logout.LogoutFilter@5fa92f0c, com.venesa.ctvvcare.config.JwtRequestFilter@28f0a0e5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@c66b573, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3595924c, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5ee320d0, org.springframework.security.web.session.SessionManagementFilter@183abd1b, org.springframework.security.web.access.ExceptionTranslationFilter@323b6197, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1727c121]
+2020-11-04 09:26:54.399  INFO 21591 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-11-04 09:26:54.411  INFO 21591 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8088 (http) with context path ''
+2020-11-04 09:26:54.413  INFO 21591 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-11-04 09:26:54.538  INFO 21591 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-11-04 09:26:54.543  INFO 21591 --- [restartedMain] com.venesa.ctvvcare.CtvVcareApplication  : Started CtvVcareApplication in 3.023 seconds (JVM running for 716.543)
+2020-11-04 09:26:54.547  INFO 21591 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-11-04 09:27:48.708  INFO 21591 --- [Thread-13] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-04 09:27:48.717  INFO 21591 --- [Thread-13] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-04 09:27:48.718  INFO 21591 --- [Thread-13] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2020-11-04 09:27:48.726  INFO 21591 --- [Thread-13] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2020-11-04 09:27:48.945  INFO 21591 --- [restartedMain] com.venesa.ctvvcare.CtvVcareApplication  : Starting CtvVcareApplication on iMacSpring.local with PID 21591 (/Users/nguyenvanhuu/Documents/spring/vtc-vcare/target/classes started by nguyenvanhuu in /Users/nguyenvanhuu/Documents/spring/vtc-vcare)
+2020-11-04 09:27:48.946  INFO 21591 --- [restartedMain] com.venesa.ctvvcare.CtvVcareApplication  : No active profile set, falling back to default profiles: default
+2020-11-04 09:27:49.298  INFO 21591 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-11-04 09:27:49.348  INFO 21591 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49ms. Found 4 JPA repository interfaces.
+2020-11-04 09:27:49.563  INFO 21591 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@485181db' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-04 09:27:49.571  INFO 21591 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-04 09:27:49.663  INFO 21591 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (http)
+2020-11-04 09:27:49.665  INFO 21591 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-11-04 09:27:49.665  INFO 21591 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-04 09:27:49.741  INFO 21591 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-11-04 09:27:49.742  INFO 21591 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 792 ms
+2020-11-04 09:27:49.813  WARN 21591 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-04 09:27:49.870  INFO 21591 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-04 09:27:49.891  INFO 21591 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-04 09:27:49.969  INFO 21591 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2020-11-04 09:27:50.047  INFO 21591 --- [restartedMain] c.v.c.controller.CustomerController      : =========Start get Introduce code max  ==========
+2020-11-04 09:27:50.057  INFO 21591 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2020-11-04 09:27:50.058  INFO 21591 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2020-11-04 09:27:50.200  INFO 21591 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-04 09:27:50.201  INFO 21591 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-04 09:27:50.306  INFO 21591 --- [restartedMain] c.v.c.controller.CustomerController      : =========End get Introduce code max  ==========: 100934
+2020-11-04 09:27:50.327  INFO 21591 --- [restartedMain] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static final org.slf4j.Logger com.venesa.ctvvcare.controller.JwtAuthenticationController.log
+2020-11-04 09:27:50.437  INFO 21591 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1dfa11d2, org.springframework.security.web.context.SecurityContextPersistenceFilter@1fa08cf8, org.springframework.security.web.header.HeaderWriterFilter@6c6b81dc, org.springframework.web.filter.CorsFilter@1a5a9c3d, org.springframework.security.web.authentication.logout.LogoutFilter@5b56f3af, com.venesa.ctvvcare.config.JwtRequestFilter@62f4ad06, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@17a2587d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@27774e34, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7d788808, org.springframework.security.web.session.SessionManagementFilter@e1d20e0, org.springframework.security.web.access.ExceptionTranslationFilter@31672dbc, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7e6e41fa]
+2020-11-04 09:27:50.521  INFO 21591 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-11-04 09:27:50.535  INFO 21591 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8088 (http) with context path ''
+2020-11-04 09:27:50.537  INFO 21591 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-11-04 09:27:50.661  INFO 21591 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-11-04 09:27:50.665  INFO 21591 --- [restartedMain] com.venesa.ctvvcare.CtvVcareApplication  : Started CtvVcareApplication in 1.781 seconds (JVM running for 772.664)
+2020-11-04 09:27:50.669  INFO 21591 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-11-04 09:28:13.102  INFO 21591 --- [Thread-18] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-04 09:28:13.103  INFO 21591 --- [Thread-18] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-04 09:28:13.104  INFO 21591 --- [Thread-18] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2020-11-04 09:28:13.111  INFO 21591 --- [Thread-18] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2020-11-04 09:29:00.379  INFO 21591 --- [restartedMain] com.venesa.ctvvcare.CtvVcareApplication  : Starting CtvVcareApplication on iMacSpring.local with PID 21591 (/Users/nguyenvanhuu/Documents/spring/vtc-vcare/target/classes started by nguyenvanhuu in /Users/nguyenvanhuu/Documents/spring/vtc-vcare)
+2020-11-04 09:29:00.380  INFO 21591 --- [restartedMain] com.venesa.ctvvcare.CtvVcareApplication  : No active profile set, falling back to default profiles: default
+2020-11-04 09:29:00.707  INFO 21591 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-11-04 09:29:00.755  INFO 21591 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47ms. Found 4 JPA repository interfaces.
+2020-11-04 09:29:00.898  INFO 21591 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@5ce2cd6c' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-04 09:29:00.900  INFO 21591 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-04 09:29:00.994  INFO 21591 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (http)
+2020-11-04 09:29:00.996  INFO 21591 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-11-04 09:29:00.996  INFO 21591 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-04 09:29:01.016  INFO 21591 --- [restartedMain] o.a.c.c.C.[Tomcat-1].[localhost].[/]     : Initializing Spring embedded WebApplicationContext
+2020-11-04 09:29:01.017  INFO 21591 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 628 ms
+2020-11-04 09:29:01.105  WARN 21591 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-04 09:29:01.219  INFO 21591 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-04 09:29:01.235  INFO 21591 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-04 09:29:01.248  INFO 21591 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2020-11-04 09:29:01.352  INFO 21591 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2020-11-04 09:29:01.353  INFO 21591 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2020-11-04 09:29:01.407  INFO 21591 --- [restartedMain] c.v.c.controller.CustomerController      : =========Start get Introduce code max  ==========
+2020-11-04 09:29:01.496  INFO 21591 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-04 09:29:01.497  INFO 21591 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-04 09:29:01.649  INFO 21591 --- [restartedMain] c.v.c.controller.CustomerController      : =========End get Introduce code max  ==========: 100934
+2020-11-04 09:29:01.669  INFO 21591 --- [restartedMain] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static final org.slf4j.Logger com.venesa.ctvvcare.controller.JwtAuthenticationController.log
+2020-11-04 09:29:01.749  INFO 21591 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2c3ba07c, org.springframework.security.web.context.SecurityContextPersistenceFilter@1f8a2be7, org.springframework.security.web.header.HeaderWriterFilter@7ccd26e0, org.springframework.web.filter.CorsFilter@5ee18c4c, org.springframework.security.web.authentication.logout.LogoutFilter@474bfc9c, com.venesa.ctvvcare.config.JwtRequestFilter@486c3f4c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2120eda3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@344f3541, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@276f810f, org.springframework.security.web.session.SessionManagementFilter@24733a30, org.springframework.security.web.access.ExceptionTranslationFilter@451f6174, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1c0c616e]
+2020-11-04 09:29:01.828  INFO 21591 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-11-04 09:29:01.837  INFO 21591 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8088 (http) with context path ''
+2020-11-04 09:29:01.838  INFO 21591 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-11-04 09:29:01.961  INFO 21591 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-11-04 09:29:01.964  INFO 21591 --- [restartedMain] com.venesa.ctvvcare.CtvVcareApplication  : Started CtvVcareApplication in 1.639 seconds (JVM running for 843.962)
+2020-11-04 09:29:01.967  INFO 21591 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-11-04 09:29:08.385  INFO 21591 --- [Thread-23] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-04 09:29:08.387  INFO 21591 --- [Thread-23] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-04 09:29:08.388  INFO 21591 --- [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2020-11-04 09:29:08.396  INFO 21591 --- [Thread-23] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2020-11-04 09:29:08.532  INFO 21591 --- [restartedMain] com.venesa.ctvvcare.CtvVcareApplication  : Starting CtvVcareApplication on iMacSpring.local with PID 21591 (/Users/nguyenvanhuu/Documents/spring/vtc-vcare/target/classes started by nguyenvanhuu in /Users/nguyenvanhuu/Documents/spring/vtc-vcare)
+2020-11-04 09:29:08.533  INFO 21591 --- [restartedMain] com.venesa.ctvvcare.CtvVcareApplication  : No active profile set, falling back to default profiles: default
+2020-11-04 09:29:08.776 ERROR 21591 --- [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.context.PropertyPlaceholderAutoConfiguration.propertySourcesPlaceholderConfigurer
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60) ~[spring-boot-autoconfigure-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108) ~[spring-context-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:184) ~[spring-context-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:144) ~[spring-context-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:120) ~[spring-context-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:331) ~[spring-context-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:236) ~[spring-context-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:280) ~[spring-context-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:96) ~[spring-context-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:707) ~[spring-context-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:533) ~[spring-context-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:758) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:750) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at com.venesa.ctvvcare.CtvVcareApplication.main(CtvVcareApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.venesa.ctvvcare.config.ViewConfiguration] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@3874ce69]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:481) ~[spring-core-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:358) ~[spring-core-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:414) ~[spring-core-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$2(AbstractAutowireCapableBeanFactory.java:742) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1705) ~[na:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:741) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:680) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:648) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1614) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:523) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:495) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanNamesForType(OnBeanCondition.java:238) ~[spring-boot-autoconfigure-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:231) ~[spring-boot-autoconfigure-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:221) ~[spring-boot-autoconfigure-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:169) ~[spring-boot-autoconfigure-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:144) ~[spring-boot-autoconfigure-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47) ~[spring-boot-autoconfigure-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	... 23 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: nz/net/ultraq/thymeleaf/LayoutDialect
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3167) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2310) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:463) ~[spring-core-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	... 39 common frames omitted
+Caused by: java.lang.ClassNotFoundException: nz.net.ultraq.thymeleaf.LayoutDialect
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:602) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:416) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:144) ~[spring-boot-devtools-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
+	... 43 common frames omitted
+
+2020-11-04 09:29:08.778  WARN 21591 --- [restartedMain] o.s.boot.SpringApplication               : Unable to close ApplicationContext
+
+java.lang.IllegalStateException: Failed to introspect Class [com.venesa.ctvvcare.config.ViewConfiguration] from ClassLoader [org.springframework.boot.devtools.restart.classloader.RestartClassLoader@3874ce69]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:481) ~[spring-core-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:358) ~[spring-core-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:414) ~[spring-core-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$2(AbstractAutowireCapableBeanFactory.java:742) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1705) ~[na:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:741) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:680) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:648) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1614) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:523) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:495) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:620) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:612) ~[spring-beans-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.getBeansOfType(AbstractApplicationContext.java:1243) ~[spring-context-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	at org.springframework.boot.SpringApplication.getExitCodeFromMappedException(SpringApplication.java:880) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.getExitCodeFromException(SpringApplication.java:868) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.handleExitCode(SpringApplication.java:855) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.handleRunFailure(SpringApplication.java:806) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:325) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1237) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1226) ~[spring-boot-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at com.venesa.ctvvcare.CtvVcareApplication.main(CtvVcareApplication.java:10) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49) ~[spring-boot-devtools-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+Caused by: java.lang.NoClassDefFoundError: nz/net/ultraq/thymeleaf/LayoutDialect
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3167) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2310) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:463) ~[spring-core-5.2.9.RELEASE.jar:5.2.9.RELEASE]
+	... 26 common frames omitted
+Caused by: java.lang.ClassNotFoundException: nz.net.ultraq.thymeleaf.LayoutDialect
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:602) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
+	at java.base/java.lang.Class.forName0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.forName(Class.java:416) ~[na:na]
+	at org.springframework.boot.devtools.restart.classloader.RestartClassLoader.loadClass(RestartClassLoader.java:144) ~[spring-boot-devtools-2.3.4.RELEASE.jar:2.3.4.RELEASE]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
+	... 30 common frames omitted
+
+2020-11-04 09:29:51.381  INFO 45162 --- [restartedMain] com.venesa.ctvvcare.CtvVcareApplication  : Starting CtvVcareApplication on iMacSpring.local with PID 45162 (/Users/nguyenvanhuu/Documents/spring/vtc-vcare/target/classes started by nguyenvanhuu in /Users/nguyenvanhuu/Documents/spring/vtc-vcare)
+2020-11-04 09:29:51.385  INFO 45162 --- [restartedMain] com.venesa.ctvvcare.CtvVcareApplication  : No active profile set, falling back to default profiles: default
+2020-11-04 09:29:51.924  INFO 45162 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-11-04 09:29:51.925  INFO 45162 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-11-04 09:29:53.512  INFO 45162 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-11-04 09:29:53.726  INFO 45162 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 182ms. Found 4 JPA repository interfaces.
+2020-11-04 09:29:54.574  INFO 45162 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@1f314ab6' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-04 09:29:54.586  INFO 45162 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-04 09:29:55.338  INFO 45162 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (http)
+2020-11-04 09:29:55.368  INFO 45162 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-11-04 09:29:55.369  INFO 45162 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-04 09:29:55.591  INFO 45162 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-11-04 09:29:55.591  INFO 45162 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3666 ms
+2020-11-04 09:29:55.757  WARN 45162 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-04 09:29:56.069  INFO 45162 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-04 09:29:56.225  INFO 45162 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-04 09:29:56.459  INFO 45162 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-11-04 09:29:56.678  INFO 45162 --- [restartedMain] c.v.c.controller.CustomerController      : =========Start get Introduce code max  ==========
+2020-11-04 09:29:57.119  INFO 45162 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-11-04 09:29:57.419  INFO 45162 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-11-04 09:29:57.949  INFO 45162 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-11-04 09:29:58.088  INFO 45162 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2020-11-04 09:29:59.968  INFO 45162 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-04 09:29:59.988  INFO 45162 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-04 09:30:00.939  INFO 45162 --- [restartedMain] c.v.c.controller.CustomerController      : =========End get Introduce code max  ==========: 100934
+2020-11-04 09:30:01.018  INFO 45162 --- [restartedMain] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static final org.slf4j.Logger com.venesa.ctvvcare.controller.JwtAuthenticationController.log
+2020-11-04 09:30:02.153  INFO 45162 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3553ea69, org.springframework.security.web.context.SecurityContextPersistenceFilter@1866437d, org.springframework.security.web.header.HeaderWriterFilter@233971d5, org.springframework.web.filter.CorsFilter@56be8ae2, org.springframework.security.web.authentication.logout.LogoutFilter@44bc5be8, com.venesa.ctvvcare.config.JwtRequestFilter@235c0cd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@67e61dba, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7d562c81, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@554fe44f, org.springframework.security.web.session.SessionManagementFilter@364a5ebd, org.springframework.security.web.access.ExceptionTranslationFilter@19bcc61c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@65e8aac4]
+2020-11-04 09:30:02.551  INFO 45162 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-11-04 09:30:02.611  INFO 45162 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8088 (http) with context path ''
+2020-11-04 09:30:02.615  INFO 45162 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-11-04 09:30:02.959  INFO 45162 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-11-04 09:30:02.976  INFO 45162 --- [restartedMain] com.venesa.ctvvcare.CtvVcareApplication  : Started CtvVcareApplication in 12.616 seconds (JVM running for 13.64)
+2020-11-04 09:30:18.668  INFO 45162 --- [http-nio-8088-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-04 09:30:18.668  INFO 45162 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-11-04 09:30:18.688  INFO 45162 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 19 ms
+2020-11-04 09:30:18.713  WARN 45162 --- [http-nio-8088-exec-1] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:30:24.632  WARN 45162 --- [http-nio-8088-exec-2] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:30:25.530  WARN 45162 --- [http-nio-8088-exec-3] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:30:25.543  WARN 45162 --- [http-nio-8088-exec-3] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:30:25.545  WARN 45162 --- [http-nio-8088-exec-3] o.s.web.servlet.PageNotFound             : No mapping for GET /static/js/jquery-3.4.1.min.js
+2020-11-04 09:30:25.571  WARN 45162 --- [http-nio-8088-exec-6] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:30:25.573  WARN 45162 --- [http-nio-8088-exec-5] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:30:25.574  WARN 45162 --- [http-nio-8088-exec-5] o.s.web.servlet.PageNotFound             : No mapping for GET /static/js/jquery.dataTables.min.js
+2020-11-04 09:30:25.579  WARN 45162 --- [http-nio-8088-exec-8] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:30:25.573  WARN 45162 --- [http-nio-8088-exec-6] o.s.web.servlet.PageNotFound             : No mapping for GET /static/css/jquery.dataTables.css
+2020-11-04 09:30:25.581  WARN 45162 --- [http-nio-8088-exec-8] o.s.web.servlet.PageNotFound             : No mapping for GET /static/css/bootstrap.min.css
+2020-11-04 09:30:25.585  WARN 45162 --- [http-nio-8088-exec-7] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:30:25.586  WARN 45162 --- [http-nio-8088-exec-7] o.s.web.servlet.PageNotFound             : No mapping for GET /static/js/dataTables.fixedHeader.min.js
+2020-11-04 09:30:25.589  WARN 45162 --- [http-nio-8088-exec-4] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:30:25.598  WARN 45162 --- [http-nio-8088-exec-4] o.s.web.servlet.PageNotFound             : No mapping for GET /static/css/fixedHeader.dataTables.min.css
+2020-11-04 09:30:25.717  WARN 45162 --- [http-nio-8088-exec-3] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:30:25.719  WARN 45162 --- [http-nio-8088-exec-3] o.s.web.servlet.PageNotFound             : No mapping for GET /static/style.css
+2020-11-04 09:30:25.720  WARN 45162 --- [http-nio-8088-exec-8] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:30:25.722  WARN 45162 --- [http-nio-8088-exec-8] o.s.web.servlet.PageNotFound             : No mapping for GET /static/css/bootstrap-select.css
+2020-11-04 09:30:25.724  WARN 45162 --- [http-nio-8088-exec-7] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:30:25.728  WARN 45162 --- [http-nio-8088-exec-7] o.s.web.servlet.PageNotFound             : No mapping for GET /static/js/popper.min.js
+2020-11-04 09:30:25.736  WARN 45162 --- [http-nio-8088-exec-2] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:30:25.737  WARN 45162 --- [http-nio-8088-exec-2] o.s.web.servlet.PageNotFound             : No mapping for GET /static/js/jszip.js
+2020-11-04 09:30:25.740  WARN 45162 --- [http-nio-8088-exec-7] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:30:25.741  WARN 45162 --- [http-nio-8088-exec-7] o.s.web.servlet.PageNotFound             : No mapping for GET /static/js/xlsx-populate.min.js
+2020-11-04 09:30:25.753  WARN 45162 --- [http-nio-8088-exec-7] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:30:25.755  WARN 45162 --- [http-nio-8088-exec-7] o.s.web.servlet.PageNotFound             : No mapping for GET /static/js/bootstrap-select.js
+2020-11-04 09:30:25.785  WARN 45162 --- [http-nio-8088-exec-10] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:30:25.786  WARN 45162 --- [http-nio-8088-exec-10] o.s.web.servlet.PageNotFound             : No mapping for GET /static/js/bootstrap.min.js
+2020-11-04 09:30:25.805  WARN 45162 --- [http-nio-8088-exec-1] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:30:25.805  WARN 45162 --- [http-nio-8088-exec-9] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:30:25.806  WARN 45162 --- [http-nio-8088-exec-1] o.s.web.servlet.PageNotFound             : No mapping for GET /static/js/xlsx.full.min.js
+2020-11-04 09:30:25.806  WARN 45162 --- [http-nio-8088-exec-9] o.s.web.servlet.PageNotFound             : No mapping for GET /static/js/dataTables.fixedHeader.min.js
+2020-11-04 09:30:25.817  WARN 45162 --- [http-nio-8088-exec-4] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:30:25.818  WARN 45162 --- [http-nio-8088-exec-4] o.s.web.servlet.PageNotFound             : No mapping for GET /static/js/login.js
+2020-11-04 09:30:25.829  WARN 45162 --- [http-nio-8088-exec-3] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:30:25.832  WARN 45162 --- [http-nio-8088-exec-3] o.s.web.servlet.PageNotFound             : No mapping for GET /static/css/bootstrap.min.css
+2020-11-04 09:30:25.860  WARN 45162 --- [http-nio-8088-exec-8] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:30:25.861  WARN 45162 --- [http-nio-8088-exec-8] o.s.web.servlet.PageNotFound             : No mapping for GET /static/js/popper.min.js
+2020-11-04 09:30:25.878  WARN 45162 --- [http-nio-8088-exec-5] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:30:25.879  WARN 45162 --- [http-nio-8088-exec-5] o.s.web.servlet.PageNotFound             : No mapping for GET /static/js/bootstrap.min.js
+2020-11-04 09:30:25.890  WARN 45162 --- [http-nio-8088-exec-10] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:30:25.892  WARN 45162 --- [http-nio-8088-exec-10] o.s.web.servlet.PageNotFound             : No mapping for GET /static/style.css
+2020-11-04 09:30:25.895  WARN 45162 --- [http-nio-8088-exec-2] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:30:25.896  WARN 45162 --- [http-nio-8088-exec-2] o.s.web.servlet.PageNotFound             : No mapping for GET /static/js/xlsx.full.min.js
+2020-11-04 09:30:25.918  WARN 45162 --- [http-nio-8088-exec-6] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:30:25.920  WARN 45162 --- [http-nio-8088-exec-6] o.s.web.servlet.PageNotFound             : No mapping for GET /static/js/jszip.js
+2020-11-04 09:30:25.933  WARN 45162 --- [http-nio-8088-exec-7] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:30:25.936  WARN 45162 --- [http-nio-8088-exec-7] o.s.web.servlet.PageNotFound             : No mapping for GET /static/js/xlsx-populate.min.js
+2020-11-04 09:30:25.949  WARN 45162 --- [http-nio-8088-exec-1] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:30:25.951  WARN 45162 --- [http-nio-8088-exec-1] o.s.web.servlet.PageNotFound             : No mapping for GET /static/js/login.js
+2020-11-04 09:30:25.961  WARN 45162 --- [http-nio-8088-exec-4] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:30:25.963  WARN 45162 --- [http-nio-8088-exec-4] o.s.web.servlet.PageNotFound             : No mapping for GET /static/css/bootstrap-select.css
+2020-11-04 09:30:25.975  WARN 45162 --- [http-nio-8088-exec-3] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:30:25.977  WARN 45162 --- [http-nio-8088-exec-3] o.s.web.servlet.PageNotFound             : No mapping for GET /static/style.css
+2020-11-04 09:30:25.990  WARN 45162 --- [http-nio-8088-exec-9] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:30:25.992  WARN 45162 --- [http-nio-8088-exec-9] o.s.web.servlet.PageNotFound             : No mapping for GET /static/js/bootstrap-select.js
+2020-11-04 09:31:44.095  INFO 45162 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-04 09:31:44.097  INFO 45162 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-04 09:31:44.100  INFO 45162 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-11-04 09:31:44.114  INFO 45162 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-11-04 09:31:51.560  INFO 48203 --- [restartedMain] com.venesa.ctvvcare.CtvVcareApplication  : Starting CtvVcareApplication on iMacSpring.local with PID 48203 (/Users/nguyenvanhuu/Documents/spring/vtc-vcare/target/classes started by nguyenvanhuu in /Users/nguyenvanhuu/Documents/spring/vtc-vcare)
+2020-11-04 09:31:51.565  INFO 48203 --- [restartedMain] com.venesa.ctvvcare.CtvVcareApplication  : No active profile set, falling back to default profiles: default
+2020-11-04 09:31:52.014  INFO 48203 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-11-04 09:31:52.015  INFO 48203 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-11-04 09:31:53.434  INFO 48203 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-11-04 09:31:53.672  INFO 48203 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 217ms. Found 4 JPA repository interfaces.
+2020-11-04 09:31:54.426  INFO 48203 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@77d3c7af' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-04 09:31:54.432  INFO 48203 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-04 09:31:55.038  INFO 48203 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (http)
+2020-11-04 09:31:55.055  INFO 48203 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-11-04 09:31:55.056  INFO 48203 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-04 09:31:55.336  INFO 48203 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-11-04 09:31:55.338  INFO 48203 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3323 ms
+2020-11-04 09:31:55.513  WARN 48203 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-04 09:31:55.819  INFO 48203 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-04 09:31:55.969  INFO 48203 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-04 09:31:56.125  INFO 48203 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-11-04 09:31:56.494  INFO 48203 --- [restartedMain] c.v.c.controller.CustomerController      : =========Start get Introduce code max  ==========
+2020-11-04 09:31:56.548  INFO 48203 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-11-04 09:31:56.745  INFO 48203 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-11-04 09:31:57.172  INFO 48203 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-11-04 09:31:57.222  INFO 48203 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2020-11-04 09:31:58.413  INFO 48203 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-04 09:31:58.422  INFO 48203 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-04 09:31:59.119  INFO 48203 --- [restartedMain] c.v.c.controller.CustomerController      : =========End get Introduce code max  ==========: 100934
+2020-11-04 09:31:59.168  INFO 48203 --- [restartedMain] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static final org.slf4j.Logger com.venesa.ctvvcare.controller.JwtAuthenticationController.log
+2020-11-04 09:32:00.014  INFO 48203 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7e4dc97b, org.springframework.security.web.context.SecurityContextPersistenceFilter@67dcf391, org.springframework.security.web.header.HeaderWriterFilter@74e74279, org.springframework.web.filter.CorsFilter@834e126, org.springframework.security.web.authentication.logout.LogoutFilter@5c454c13, com.venesa.ctvvcare.config.JwtRequestFilter@31ee0709, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7e81ac65, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6d813c5, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1685c84e, org.springframework.security.web.session.SessionManagementFilter@7a7721a5, org.springframework.security.web.access.ExceptionTranslationFilter@5a6bedb4, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@16c250be]
+2020-11-04 09:32:00.347  INFO 48203 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-11-04 09:32:00.435  INFO 48203 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8088 (http) with context path ''
+2020-11-04 09:32:00.438  INFO 48203 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-11-04 09:32:00.795  INFO 48203 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-11-04 09:32:00.820  INFO 48203 --- [restartedMain] com.venesa.ctvvcare.CtvVcareApplication  : Started CtvVcareApplication in 10.068 seconds (JVM running for 10.909)
+2020-11-04 09:32:11.810  INFO 48203 --- [http-nio-8088-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-04 09:32:11.811  INFO 48203 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-11-04 09:32:11.822  INFO 48203 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2020-11-04 09:32:11.840  WARN 48203 --- [http-nio-8088-exec-1] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:32:12.550  WARN 48203 --- [http-nio-8088-exec-4] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:32:12.554  WARN 48203 --- [http-nio-8088-exec-4] o.s.web.servlet.PageNotFound             : No mapping for GET /static/css/jquery.dataTables.css
+2020-11-04 09:32:12.579  WARN 48203 --- [http-nio-8088-exec-7] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:32:12.581  WARN 48203 --- [http-nio-8088-exec-7] o.s.web.servlet.PageNotFound             : No mapping for GET /static/js/dataTables.fixedHeader.min.js
+2020-11-04 09:32:12.584  WARN 48203 --- [http-nio-8088-exec-6] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:32:12.591  WARN 48203 --- [http-nio-8088-exec-6] o.s.web.servlet.PageNotFound             : No mapping for GET /static/css/bootstrap.min.css
+2020-11-04 09:32:12.593  WARN 48203 --- [http-nio-8088-exec-5] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:32:12.594  WARN 48203 --- [http-nio-8088-exec-2] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:32:12.594  WARN 48203 --- [http-nio-8088-exec-5] o.s.web.servlet.PageNotFound             : No mapping for GET /static/js/jquery.dataTables.min.js
+2020-11-04 09:32:12.602  WARN 48203 --- [http-nio-8088-exec-3] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:32:12.607  WARN 48203 --- [http-nio-8088-exec-3] o.s.web.servlet.PageNotFound             : No mapping for GET /static/css/fixedHeader.dataTables.min.css
+2020-11-04 09:32:12.652  WARN 48203 --- [http-nio-8088-exec-2] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:32:12.653  WARN 48203 --- [http-nio-8088-exec-2] o.s.web.servlet.PageNotFound             : No mapping for GET /static/style.css
+2020-11-04 09:32:12.743  WARN 48203 --- [http-nio-8088-exec-1] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:32:12.744  WARN 48203 --- [http-nio-8088-exec-1] o.s.web.servlet.PageNotFound             : No mapping for GET /static/js/jszip.js
+2020-11-04 09:32:12.756  WARN 48203 --- [http-nio-8088-exec-5] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:32:12.758  WARN 48203 --- [http-nio-8088-exec-5] o.s.web.servlet.PageNotFound             : No mapping for GET /static/js/login.js
+2020-11-04 09:32:12.763  WARN 48203 --- [http-nio-8088-exec-8] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:32:12.765  WARN 48203 --- [http-nio-8088-exec-10] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:32:12.764  WARN 48203 --- [http-nio-8088-exec-9] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:32:12.766  WARN 48203 --- [http-nio-8088-exec-8] o.s.web.servlet.PageNotFound             : No mapping for GET /static/css/bootstrap-select.css
+2020-11-04 09:32:12.769  WARN 48203 --- [http-nio-8088-exec-9] o.s.web.servlet.PageNotFound             : No mapping for GET /static/js/bootstrap.min.js
+2020-11-04 09:32:12.767  WARN 48203 --- [http-nio-8088-exec-10] o.s.web.servlet.PageNotFound             : No mapping for GET /static/js/xlsx.full.min.js
+2020-11-04 09:32:12.800  WARN 48203 --- [http-nio-8088-exec-9] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:32:12.801  WARN 48203 --- [http-nio-8088-exec-7] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:32:12.803  WARN 48203 --- [http-nio-8088-exec-6] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:32:12.805  WARN 48203 --- [http-nio-8088-exec-1] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:32:12.820  WARN 48203 --- [http-nio-8088-exec-9] o.s.web.servlet.PageNotFound             : No mapping for GET /static/js/xlsx-populate.min.js
+2020-11-04 09:32:12.820  WARN 48203 --- [http-nio-8088-exec-1] o.s.web.servlet.PageNotFound             : No mapping for GET /static/js/dataTables.fixedHeader.min.js
+2020-11-04 09:32:12.820  WARN 48203 --- [http-nio-8088-exec-7] o.s.web.servlet.PageNotFound             : No mapping for GET /static/js/bootstrap-select.js
+2020-11-04 09:32:12.828  WARN 48203 --- [http-nio-8088-exec-6] o.s.web.servlet.PageNotFound             : No mapping for GET /static/js/popper.min.js
+2020-11-04 09:32:12.833  WARN 48203 --- [http-nio-8088-exec-5] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:32:12.835  WARN 48203 --- [http-nio-8088-exec-5] o.s.web.servlet.PageNotFound             : No mapping for GET /static/css/bootstrap.min.css
+2020-11-04 09:32:12.849  WARN 48203 --- [http-nio-8088-exec-4] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:32:12.851  WARN 48203 --- [http-nio-8088-exec-4] o.s.web.servlet.PageNotFound             : No mapping for GET /static/js/bootstrap.min.js
+2020-11-04 09:32:12.868  WARN 48203 --- [http-nio-8088-exec-2] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:32:12.869  WARN 48203 --- [http-nio-8088-exec-2] o.s.web.servlet.PageNotFound             : No mapping for GET /static/style.css
+2020-11-04 09:32:12.871  WARN 48203 --- [http-nio-8088-exec-3] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:32:12.872  WARN 48203 --- [http-nio-8088-exec-3] o.s.web.servlet.PageNotFound             : No mapping for GET /static/js/xlsx.full.min.js
+2020-11-04 09:32:12.892  WARN 48203 --- [http-nio-8088-exec-10] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:32:12.893  WARN 48203 --- [http-nio-8088-exec-10] o.s.web.servlet.PageNotFound             : No mapping for GET /static/js/jszip.js
+2020-11-04 09:32:12.911  WARN 48203 --- [http-nio-8088-exec-8] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:32:12.913  WARN 48203 --- [http-nio-8088-exec-8] o.s.web.servlet.PageNotFound             : No mapping for GET /static/js/xlsx-populate.min.js
+2020-11-04 09:32:12.924  WARN 48203 --- [http-nio-8088-exec-9] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:32:12.926  WARN 48203 --- [http-nio-8088-exec-9] o.s.web.servlet.PageNotFound             : No mapping for GET /static/js/login.js
+2020-11-04 09:32:12.937  WARN 48203 --- [http-nio-8088-exec-7] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:32:12.939  WARN 48203 --- [http-nio-8088-exec-7] o.s.web.servlet.PageNotFound             : No mapping for GET /static/css/bootstrap-select.css
+2020-11-04 09:32:12.949  WARN 48203 --- [http-nio-8088-exec-1] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:32:12.950  WARN 48203 --- [http-nio-8088-exec-1] o.s.web.servlet.PageNotFound             : No mapping for GET /static/style.css
+2020-11-04 09:32:12.962  WARN 48203 --- [http-nio-8088-exec-6] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:32:12.964  WARN 48203 --- [http-nio-8088-exec-6] o.s.web.servlet.PageNotFound             : No mapping for GET /static/js/bootstrap-select.js
+2020-11-04 09:34:49.472  WARN 48203 --- [http-nio-8088-exec-9] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:34:49.574  WARN 48203 --- [http-nio-8088-exec-6] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:34:49.580  WARN 48203 --- [http-nio-8088-exec-1] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:34:49.580  WARN 48203 --- [http-nio-8088-exec-7] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:34:49.584  WARN 48203 --- [http-nio-8088-exec-8] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:34:49.585  WARN 48203 --- [http-nio-8088-exec-1] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:34:49.586  WARN 48203 --- [http-nio-8088-exec-8] o.s.web.servlet.PageNotFound             : No mapping for GET /static/js/dataTables.fixedHeader.min.js
+2020-11-04 09:34:49.594  WARN 48203 --- [http-nio-8088-exec-4] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:34:49.665  WARN 48203 --- [http-nio-8088-exec-10] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:34:49.674  WARN 48203 --- [http-nio-8088-exec-3] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:34:49.665  WARN 48203 --- [http-nio-8088-exec-2] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:34:49.681  WARN 48203 --- [http-nio-8088-exec-8] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:34:49.707  WARN 48203 --- [http-nio-8088-exec-9] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:34:49.710  WARN 48203 --- [http-nio-8088-exec-5] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:34:49.718  WARN 48203 --- [http-nio-8088-exec-5] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:34:49.718  WARN 48203 --- [http-nio-8088-exec-6] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:34:49.724  WARN 48203 --- [http-nio-8088-exec-7] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:34:49.823  WARN 48203 --- [http-nio-8088-exec-1] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:34:49.825  WARN 48203 --- [http-nio-8088-exec-1] o.s.web.servlet.PageNotFound             : No mapping for GET /static/js/dataTables.fixedHeader.min.js
+2020-11-04 09:34:49.905  WARN 48203 --- [http-nio-8088-exec-3] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:34:49.912  WARN 48203 --- [http-nio-8088-exec-10] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:34:49.923  WARN 48203 --- [http-nio-8088-exec-4] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:34:50.028  WARN 48203 --- [http-nio-8088-exec-9] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:34:50.032  WARN 48203 --- [http-nio-8088-exec-7] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:34:50.409  WARN 48203 --- [http-nio-8088-exec-8] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:35:40.089  WARN 48203 --- [http-nio-8088-exec-6] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:35:40.158  WARN 48203 --- [http-nio-8088-exec-5] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:35:40.167  WARN 48203 --- [http-nio-8088-exec-5] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:35:40.174  WARN 48203 --- [http-nio-8088-exec-2] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:35:40.180  WARN 48203 --- [http-nio-8088-exec-5] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:35:40.183  WARN 48203 --- [http-nio-8088-exec-1] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:35:40.186  WARN 48203 --- [http-nio-8088-exec-5] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:35:40.197  WARN 48203 --- [http-nio-8088-exec-10] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:35:40.200  WARN 48203 --- [http-nio-8088-exec-1] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:35:40.216  WARN 48203 --- [http-nio-8088-exec-3] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:35:40.223  WARN 48203 --- [http-nio-8088-exec-3] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:35:40.226  WARN 48203 --- [http-nio-8088-exec-9] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:35:40.238  WARN 48203 --- [http-nio-8088-exec-2] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:35:40.241  WARN 48203 --- [http-nio-8088-exec-7] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:35:40.248  WARN 48203 --- [http-nio-8088-exec-3] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:35:40.252  WARN 48203 --- [http-nio-8088-exec-8] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:35:40.410  WARN 48203 --- [http-nio-8088-exec-8] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:35:40.414  WARN 48203 --- [http-nio-8088-exec-6] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:35:40.426  WARN 48203 --- [http-nio-8088-exec-9] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:35:40.473  WARN 48203 --- [http-nio-8088-exec-3] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:35:40.477  WARN 48203 --- [http-nio-8088-exec-7] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:35:40.748  WARN 48203 --- [http-nio-8088-exec-10] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:36:42.801  INFO 48203 --- [Thread-5] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-04 09:36:42.806  INFO 48203 --- [Thread-5] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-04 09:36:42.808  INFO 48203 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-11-04 09:36:42.825  INFO 48203 --- [Thread-5] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-11-04 09:36:43.169  INFO 48203 --- [restartedMain] com.venesa.ctvvcare.CtvVcareApplication  : Starting CtvVcareApplication on iMacSpring.local with PID 48203 (/Users/nguyenvanhuu/Documents/spring/vtc-vcare/target/classes started by nguyenvanhuu in /Users/nguyenvanhuu/Documents/spring/vtc-vcare)
+2020-11-04 09:36:43.170  INFO 48203 --- [restartedMain] com.venesa.ctvvcare.CtvVcareApplication  : No active profile set, falling back to default profiles: default
+2020-11-04 09:36:43.587  INFO 48203 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-11-04 09:36:43.621  INFO 48203 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 33ms. Found 4 JPA repository interfaces.
+2020-11-04 09:36:43.752  INFO 48203 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@34875d8e' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-04 09:36:43.753  INFO 48203 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-04 09:36:43.846  INFO 48203 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (http)
+2020-11-04 09:36:43.848  INFO 48203 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-11-04 09:36:43.848  INFO 48203 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-04 09:36:43.877  INFO 48203 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-11-04 09:36:43.878  INFO 48203 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 705 ms
+2020-11-04 09:36:43.939  WARN 48203 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-04 09:36:44.004  INFO 48203 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-04 09:36:44.016  INFO 48203 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-04 09:36:44.028  INFO 48203 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2020-11-04 09:36:44.167  INFO 48203 --- [restartedMain] c.v.c.controller.CustomerController      : =========Start get Introduce code max  ==========
+2020-11-04 09:36:44.184  INFO 48203 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2020-11-04 09:36:44.184  INFO 48203 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2020-11-04 09:36:44.425  INFO 48203 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-04 09:36:44.426  INFO 48203 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-04 09:36:44.651  INFO 48203 --- [restartedMain] c.v.c.controller.CustomerController      : =========End get Introduce code max  ==========: 100934
+2020-11-04 09:36:44.683  INFO 48203 --- [restartedMain] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static final org.slf4j.Logger com.venesa.ctvvcare.controller.JwtAuthenticationController.log
+2020-11-04 09:36:44.851  INFO 48203 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@ccf20ab, org.springframework.security.web.context.SecurityContextPersistenceFilter@1f0044eb, org.springframework.security.web.header.HeaderWriterFilter@40a57749, org.springframework.web.filter.CorsFilter@72d5895f, org.springframework.security.web.authentication.logout.LogoutFilter@7f35a057, com.venesa.ctvvcare.config.JwtRequestFilter@34cd1ebb, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@771b398f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1cef071a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@abdb295, org.springframework.security.web.session.SessionManagementFilter@54b5456b, org.springframework.security.web.access.ExceptionTranslationFilter@16dfd599, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6be51bc4]
+2020-11-04 09:36:44.998  INFO 48203 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-11-04 09:36:45.050  INFO 48203 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8088 (http) with context path ''
+2020-11-04 09:36:45.052  INFO 48203 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-11-04 09:36:45.259  INFO 48203 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-11-04 09:36:45.267  INFO 48203 --- [restartedMain] com.venesa.ctvvcare.CtvVcareApplication  : Started CtvVcareApplication in 2.339 seconds (JVM running for 295.35)
+2020-11-04 09:36:45.274  INFO 48203 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-11-04 09:37:12.906  INFO 48203 --- [Thread-8] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-04 09:37:12.915  INFO 48203 --- [Thread-8] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-04 09:37:12.916  INFO 48203 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2020-11-04 09:37:12.923  INFO 48203 --- [Thread-8] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2020-11-04 09:37:13.066  INFO 48203 --- [restartedMain] com.venesa.ctvvcare.CtvVcareApplication  : Starting CtvVcareApplication on iMacSpring.local with PID 48203 (/Users/nguyenvanhuu/Documents/spring/vtc-vcare/target/classes started by nguyenvanhuu in /Users/nguyenvanhuu/Documents/spring/vtc-vcare)
+2020-11-04 09:37:13.066  INFO 48203 --- [restartedMain] com.venesa.ctvvcare.CtvVcareApplication  : No active profile set, falling back to default profiles: default
+2020-11-04 09:37:13.316  INFO 48203 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-11-04 09:37:13.360  INFO 48203 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43ms. Found 4 JPA repository interfaces.
+2020-11-04 09:37:13.493  INFO 48203 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@47b6015f' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-04 09:37:13.494  INFO 48203 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-04 09:37:13.565  INFO 48203 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (http)
+2020-11-04 09:37:13.566  INFO 48203 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-11-04 09:37:13.566  INFO 48203 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-04 09:37:13.606  INFO 48203 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-11-04 09:37:13.610  INFO 48203 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 538 ms
+2020-11-04 09:37:13.685  WARN 48203 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-04 09:37:13.744  INFO 48203 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-04 09:37:13.761  INFO 48203 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-04 09:37:13.775  INFO 48203 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2020-11-04 09:37:13.872  INFO 48203 --- [restartedMain] c.v.c.controller.CustomerController      : =========Start get Introduce code max  ==========
+2020-11-04 09:37:14.053  INFO 48203 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2020-11-04 09:37:14.054  INFO 48203 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2020-11-04 09:37:14.326  INFO 48203 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-04 09:37:14.329  INFO 48203 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-04 09:37:14.520  INFO 48203 --- [restartedMain] c.v.c.controller.CustomerController      : =========End get Introduce code max  ==========: 100934
+2020-11-04 09:37:14.550  INFO 48203 --- [restartedMain] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static final org.slf4j.Logger com.venesa.ctvvcare.controller.JwtAuthenticationController.log
+2020-11-04 09:37:14.681  INFO 48203 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@637b035e, org.springframework.security.web.context.SecurityContextPersistenceFilter@2580e49c, org.springframework.security.web.header.HeaderWriterFilter@211d0f36, org.springframework.web.filter.CorsFilter@55133e37, org.springframework.security.web.authentication.logout.LogoutFilter@1919180d, com.venesa.ctvvcare.config.JwtRequestFilter@324fafa0, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@46ecaa8d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@fc179d9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@25d704c5, org.springframework.security.web.session.SessionManagementFilter@3b81fd6a, org.springframework.security.web.access.ExceptionTranslationFilter@602065e4, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@39a9c476]
+2020-11-04 09:37:14.825  INFO 48203 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-11-04 09:37:14.854  INFO 48203 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8088 (http) with context path ''
+2020-11-04 09:37:14.856  INFO 48203 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-11-04 09:37:14.997  INFO 48203 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-11-04 09:37:15.000  INFO 48203 --- [restartedMain] com.venesa.ctvvcare.CtvVcareApplication  : Started CtvVcareApplication in 1.996 seconds (JVM running for 325.082)
+2020-11-04 09:37:15.002  INFO 48203 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2020-11-04 09:37:31.631  INFO 48203 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-04 09:37:31.636  INFO 48203 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-04 09:37:31.637  INFO 48203 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2020-11-04 09:37:31.643  INFO 48203 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2020-11-04 09:37:40.496  INFO 57323 --- [restartedMain] com.venesa.ctvvcare.CtvVcareApplication  : Starting CtvVcareApplication on iMacSpring.local with PID 57323 (/Users/nguyenvanhuu/Documents/spring/vtc-vcare/target/classes started by nguyenvanhuu in /Users/nguyenvanhuu/Documents/spring/vtc-vcare)
+2020-11-04 09:37:40.502  INFO 57323 --- [restartedMain] com.venesa.ctvvcare.CtvVcareApplication  : No active profile set, falling back to default profiles: default
+2020-11-04 09:37:40.889  INFO 57323 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-11-04 09:37:40.889  INFO 57323 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-11-04 09:37:42.130  INFO 57323 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFERRED mode.
+2020-11-04 09:37:42.311  INFO 57323 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 157ms. Found 4 JPA repository interfaces.
+2020-11-04 09:37:43.011  INFO 57323 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@741d74a8' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-04 09:37:43.029  INFO 57323 --- [restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-11-04 09:37:43.587  INFO 57323 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8088 (http)
+2020-11-04 09:37:43.607  INFO 57323 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-11-04 09:37:43.607  INFO 57323 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-11-04 09:37:43.795  INFO 57323 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-11-04 09:37:43.796  INFO 57323 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2906 ms
+2020-11-04 09:37:43.955  WARN 57323 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-11-04 09:37:44.189  INFO 57323 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-04 09:37:44.314  INFO 57323 --- [task-1] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-11-04 09:37:44.474  INFO 57323 --- [task-1] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.21.Final
+2020-11-04 09:37:44.723  INFO 57323 --- [restartedMain] c.v.c.controller.CustomerController      : =========Start get Introduce code max  ==========
+2020-11-04 09:37:44.874  INFO 57323 --- [task-1] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-11-04 09:37:45.057  INFO 57323 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-11-04 09:37:45.563  INFO 57323 --- [task-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-11-04 09:37:45.633  INFO 57323 --- [task-1] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2020-11-04 09:37:46.953  INFO 57323 --- [task-1] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-11-04 09:37:46.969  INFO 57323 --- [task-1] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-11-04 09:37:47.721  INFO 57323 --- [restartedMain] c.v.c.controller.CustomerController      : =========End get Introduce code max  ==========: 100934
+2020-11-04 09:37:47.766  INFO 57323 --- [restartedMain] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static final org.slf4j.Logger com.venesa.ctvvcare.controller.JwtAuthenticationController.log
+2020-11-04 09:37:48.617  INFO 57323 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1a3ca9bd, org.springframework.security.web.context.SecurityContextPersistenceFilter@f601be8, org.springframework.security.web.header.HeaderWriterFilter@3617ca99, org.springframework.web.filter.CorsFilter@30fb4b29, org.springframework.security.web.authentication.logout.LogoutFilter@2dde7d5a, com.venesa.ctvvcare.config.JwtRequestFilter@421450de, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2d32eb25, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@780a8cc3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4935cfd8, org.springframework.security.web.session.SessionManagementFilter@4e477796, org.springframework.security.web.access.ExceptionTranslationFilter@50ce9495, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1a9f810f]
+2020-11-04 09:37:48.894  INFO 57323 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-11-04 09:37:48.942  INFO 57323 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8088 (http) with context path ''
+2020-11-04 09:37:48.944  INFO 57323 --- [restartedMain] DeferredRepositoryInitializationListener : Triggering deferred initialization of Spring Data repositories…
+2020-11-04 09:37:49.244  INFO 57323 --- [restartedMain] DeferredRepositoryInitializationListener : Spring Data repositories initialized!
+2020-11-04 09:37:49.257  INFO 57323 --- [restartedMain] com.venesa.ctvvcare.CtvVcareApplication  : Started CtvVcareApplication in 9.792 seconds (JVM running for 10.914)
+2020-11-04 09:38:13.505  INFO 57323 --- [http-nio-8088-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-04 09:38:13.508  INFO 57323 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-11-04 09:38:13.526  INFO 57323 --- [http-nio-8088-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 17 ms
+2020-11-04 09:38:13.547  WARN 57323 --- [http-nio-8088-exec-1] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:38:14.382  WARN 57323 --- [http-nio-8088-exec-4] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:38:14.411  WARN 57323 --- [http-nio-8088-exec-6] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:38:14.414  WARN 57323 --- [http-nio-8088-exec-5] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:38:14.415  WARN 57323 --- [http-nio-8088-exec-2] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:38:14.413  WARN 57323 --- [http-nio-8088-exec-3] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:38:14.412  WARN 57323 --- [http-nio-8088-exec-7] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:38:14.465  WARN 57323 --- [http-nio-8088-exec-9] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:38:14.469  WARN 57323 --- [http-nio-8088-exec-8] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:38:14.469  WARN 57323 --- [http-nio-8088-exec-10] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:38:14.469  WARN 57323 --- [http-nio-8088-exec-4] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:38:14.486  WARN 57323 --- [http-nio-8088-exec-1] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:38:14.486  WARN 57323 --- [http-nio-8088-exec-2] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:38:14.507  WARN 57323 --- [http-nio-8088-exec-6] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:38:14.507  WARN 57323 --- [http-nio-8088-exec-5] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:38:14.538  WARN 57323 --- [http-nio-8088-exec-7] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:38:14.729  WARN 57323 --- [http-nio-8088-exec-3] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:38:14.738  WARN 57323 --- [http-nio-8088-exec-2] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:38:14.811  WARN 57323 --- [http-nio-8088-exec-9] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:38:14.815  WARN 57323 --- [http-nio-8088-exec-8] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:38:15.172  WARN 57323 --- [http-nio-8088-exec-1] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:38:37.586  WARN 57323 --- [http-nio-8088-exec-6] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:38:37.597  WARN 57323 --- [http-nio-8088-exec-6] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:38:37.598  WARN 57323 --- [http-nio-8088-exec-10] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:38:37.602  WARN 57323 --- [http-nio-8088-exec-7] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:38:37.604  WARN 57323 --- [http-nio-8088-exec-5] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:38:37.705  WARN 57323 --- [http-nio-8088-exec-3] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:38:37.705  WARN 57323 --- [http-nio-8088-exec-8] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:38:37.721  WARN 57323 --- [http-nio-8088-exec-9] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:38:37.743  WARN 57323 --- [http-nio-8088-exec-2] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:38:37.763  WARN 57323 --- [http-nio-8088-exec-1] c.v.ctvvcare.config.JwtRequestFilter     : JWT Token does not begin with Bearer String
+2020-11-04 09:39:05.832  INFO 57323 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-11-04 09:39:05.838  INFO 57323 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-04 09:39:05.841  INFO 57323 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-11-04 09:39:05.857  INFO 57323 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
