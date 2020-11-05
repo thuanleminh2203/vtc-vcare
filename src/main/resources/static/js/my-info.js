@@ -27,3 +27,8 @@ const getMyInfoAction = async (req) => {
         console.error(error);
     }
 }
+
+function logOut() {
+    window.location.href = "./login.html";
+    localStorage.clear();
+}

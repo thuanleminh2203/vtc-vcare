@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/")
 public class HomeController {
 
-    @GetMapping({"","/"})
+    @GetMapping({"","/login.html"})
     public String home(Model model) {
 //        model.addAttribute("abc", "123456");
         System.out.println("===here====");

@@ -41,7 +41,7 @@ const loginAction = async (req) => {
             case 0:
                 localStorage.setItem("item", myJson.data.jwtToken);
                 localStorage.setItem("role", (myJson.data.role.length == 0) ? "" : myJson.data.role[0].authority);
-                window.location.href = "C:/Users/sonvsh/Documents/Hara-Affiliates/public/collaborators.html";
+                window.location.href = "./collaborators.html";
                 break;
             case 1:
                 $("#myModal").modal();

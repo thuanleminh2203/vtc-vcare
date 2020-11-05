@@ -16,7 +16,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
 
 @RestController
@@ -38,35 +37,40 @@ public class EmailController {
     @PostMapping("/reset-password")
     public ResponseEntity<?> sendMail(@RequestBody EmailRequest rq) {
         ResponseEntity<?> responseEntity;
+        log.info("===Start reset password ====");
         try {
             emailService.resetPassword(rq);
             responseEntity = WapperDataResponse.sucsses(new ResponseData<>(ConstUtils.SUCCSESS, "", null));
         } catch (Exception e) {
+            log.info("===Err reset password ====" + e.getMessage());
             responseEntity = WapperDataResponse.err(new ResponseData<>(1, e.getMessage(), null),
                     HttpStatus.BAD_REQUEST);
         }
+        log.info("===End reset password ====");
+
         return responseEntity;
     }
 
     @PostMapping("/change-password")
     public ResponseEntity<?> changePassword(@RequestBody ChangePasswordRequest rq) {
-        ResponseEntity<?> responseEntity;
+        log.info("===Start reset password ====");
         try {
             emailService.changePassword(rq);
-            responseEntity = WapperDataResponse.sucsses(new ResponseData<>(ConstUtils.SUCCSESS, "", null));
-
+            log.info("===End reset password ====");
+            return WapperDataResponse.sucsses(new ResponseData<>(ConstUtils.SUCCSESS, "", null));
         } catch (Exception e) {
-            responseEntity = WapperDataResponse.err(new ResponseData<>(1, e.getMessage(), null),
+            log.info("===Err reset password ====");
+            return WapperDataResponse.err(new ResponseData<>(1, e.getMessage(), null),
                     HttpStatus.BAD_REQUEST);
         }
-        return responseEntity;
     }
 
     @GetMapping("/redirect-page-pwd/{token}")
-    public void redirectPageChangePassword(@PathVariable String token, HttpServletResponse response)  {
+    public void redirectPageChangePassword(@PathVariable String token, HttpServletResponse response) {
         try {
-            response.setHeader("token", token);
-            response.sendRedirect("E:/sonmlll/Hara-Affiliates/public/change-password.html?token="+token);
+            log.info("===Start redirect to page change password ====");
+
+            response.sendRedirect("http://10.33.60.12/change-password.html?token=" + token);
         } catch (Exception e) {
             log.error("==== Error when redirect page =====" + e.getMessage());
         }

@@ -40,8 +40,8 @@ public class EmailServicerImpl implements EmailService {
 
     @PostConstruct
     private void init() {
-        emailSender.setUsername("anhku0j97@gmail.com");
-        emailSender.setPassword("0915234576");
+        emailSender.setUsername(account);
+        emailSender.setPassword(password);
     }
 
 
@@ -61,7 +61,7 @@ public class EmailServicerImpl implements EmailService {
         userRepository.save(user);
         SimpleMailMessage message = new SimpleMailMessage();
         message.setSubject("Reset password ");
-        message.setText("Click this url for change password: 192.168.20.116:8088/redirect-page-pwd/"+token);
+        message.setText("Click this url for change password: 10.33.60.12/api/v1/ctv-vcare/email/redirect-page-pwd/"+token);
         message.setTo(rq.getEmail());
         emailSender.send(message);
     }
@@ -72,7 +72,7 @@ public class EmailServicerImpl implements EmailService {
         if(user==null){
             throw new Exception("This mail don't change password");
         }
-        if((new Date().before(user.getExpiryDateToken()))){
+        if((new Date().after(user.getExpiryDateToken()))){
             throw new Exception("InvalidToken : Expired");
         }
         String newPassword = bcryptEncoder.encode((rq.getNewPassword()));

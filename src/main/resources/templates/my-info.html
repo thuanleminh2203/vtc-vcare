@@ -1,137 +1,132 @@
 <!DOCTYPE html
-    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!--    <script th:src="@{/js/jquery-3.4.1.min.js}"></script>-->
+    <!-- Datatable -->
+    <link rel="stylesheet" href="/css/fixedHeader.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/jquery.dataTables.css">
+    <script type="text/javascript" src="/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="/js/dataTables.fixedHeader.min.js"></script>
+    <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="/style.css">
+</head>
 
 <body onload="getMyInfo()">
 
-    <head>
-        <!-- removed -->
-        <!-- <script type="text/javascript" href="https://code.jquery.com/jquery-3.3.1.js"></script> -->
-        <!-- <script type="text/javascript" charset="utf8"
-    src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script> -->
 
-        <!-- Jquery -->
-        <script src="static/js/jquery-3.4.1.min.js"></script>
+<div class="container" style="padding: 0px !important; max-width: 100% !important;">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <!-- Brand/logo -->
+        <a class="navbar-brand" href="#">V-CARE</a>
 
-        <!-- Datatable -->
-        <link rel="stylesheet" href="static/css/fixedHeader.dataTables.min.css">
-        <link rel="stylesheet" type="text/css" href="static/css/jquery.dataTables.css">
-        <script type="text/javascript" src="static/js/jquery.dataTables.min.js"></script>
-        <script type="text/javascript" src="static/js/dataTables.fixedHeader.min.js"></script>
-
-        <!-- Bootstrap 4 -->
-        <link rel="stylesheet" href="static/css/bootstrap.min.css">
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <script src="static/js/popper.min.js"></script>
-        <script src="static/js/bootstrap.min.js"></script>
-
-        <link rel="stylesheet" href="static/style.css">
-    </head>
-
-    <div class="container" style="padding: 0px !important; max-width: 100% !important;">
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-            <!-- Brand/logo -->
-            <a class="navbar-brand" href="#">V-CARE</a>
-
-            <!-- Links -->
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href=C:/Users/sonvsh/Documents/Hara-Affiliates/public/collaborators.html>Danh
-                        sách CTV</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="C:/Users/sonvsh/Documents/Hara-Affiliates/public/my-info.html">Thông
-                        tin cá nhân</a>
-                </li>
-                <li class="nav-item" style="position: absolute; margin-left: 82%;">
+        <!-- Links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="./collaborators.html">Danh
+                    sách CTV</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./my-info.html">Thông
+                    tin cá nhân</a>
+            </li>
+            <li class="nav-item" style="position: absolute; margin-left: 82%;">
                     <span class="nav-link" style="display: inline-flex;">
                         <i class="material-icons">&#xe7fd;</i>
-                        <a class="nav-link" href="" style="margin-top: -5px;">Đăng xuất</a>
+                        <button class="nav-link" onclick="logOut()"
+                                style="margin-top: -5px; background-color: #343a40!important; border:none; cursor: pointer">Đăng xuất</button>
                     </span>
-                </li>
-            </ul>
-        </nav>
+            </li>
+        </ul>
+    </nav>
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand nav-center" href="#">Thông tin cá nhân</a>
-        </nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand nav-center">Thông tin cá nhân</a>
+    </nav>
 
 
-        <div class="section" style="margin-left: 50%; transform: translateX(-15%);">
-            <div class="row row-custom">
-                <div class="col-md-8">
-                    <label for="name" style="font-weight: bold;">Họ và tên</label>
-                    <input disabled type="text" id="name" class="form-control input-field" />
-                </div>
-            </div>
-
-            <div class="row row-custom">
-                <div class="col-md-8">
-                    <label for="name" style="font-weight: bold;">Số điện thoại</label>
-                    <input disabled type="text" id="phone" class="form-control input-field" />
-                </div>
-            </div>
-
-            <div class="row row-custom">
-                <div class="col-md-8">
-                    <label for="name" style="font-weight: bold;">Địa chỉ</label>
-                    <input disabled type="text" id="address" class="form-control input-field" />
-                </div>
-            </div>
-
-            <div class="row row-custom">
-                <div class="col-md-8">
-                    <label for="name" style="font-weight: bold;">Số CMND</label>
-                    <input disabled type="text" id="card" class="form-control input-field" />
-                </div>
-            </div>
-
-            <div class="row row-custom">
-                <div class="col-md-8">
-                    <label for="name" style="font-weight: bold;">Mã giới thiệu</label>
-                    <input disabled type="text" id="inviteCode" class="form-control input-field" />
-                </div>
-            </div>
-
-            <div class="row row-custom">
-                <div class="col-md-8">
-                    <label for="name" style="font-weight: bold;">Tài khoản email</label>
-                    <input disabled type="text" id="email" class="form-control input-field" />
-                </div>
-            </div>
-
-            <div class="row row-custom">
-                <div class="col-md-8">
-                    <label for="name" style="font-weight: bold;">Tên ngân hàng</label>
-                    <input disabled type="text" id="bankName" class="form-control input-field" />
-                </div>
-            </div>
-
-            <div class="row row-custom">
-                <div class="col-md-8">
-                    <label for="name" style="font-weight: bold;">Số tài khoản</label>
-                    <input disabled type="text" id="bankNumber" class="form-control input-field" />
-                </div>
-            </div>
-
-            <div class="row row-custom">
-                <div class="col-md-8">
-                    <label for="name" style="font-weight: bold;">Tên chủ tài khoản</label>
-                    <input disabled type="text" id="bankOwner" class="form-control input-field" />
-                </div>
+    <div class="section" style="margin-left: 50%; transform: translateX(-15%);">
+        <div class="row row-custom">
+            <div class="col-md-8">
+                <label for="name" style="font-weight: bold;">Họ và tên</label>
+                <input disabled type="text" id="name" class="form-control input-field"/>
             </div>
         </div>
-s
+
+        <div class="row row-custom">
+            <div class="col-md-8">
+                <label for="name" style="font-weight: bold;">Số điện thoại</label>
+                <input disabled type="text" id="phone" class="form-control input-field"/>
+            </div>
+        </div>
+
+        <div class="row row-custom">
+            <div class="col-md-8">
+                <label for="name" style="font-weight: bold;">Địa chỉ</label>
+                <input disabled type="text" id="address" class="form-control input-field"/>
+            </div>
+        </div>
+
+        <div class="row row-custom">
+            <div class="col-md-8">
+                <label for="name" style="font-weight: bold;">Số CMND</label>
+                <input disabled type="text" id="card" class="form-control input-field"/>
+            </div>
+        </div>
+
+        <div class="row row-custom">
+            <div class="col-md-8">
+                <label for="name" style="font-weight: bold;">Mã giới thiệu</label>
+                <input disabled type="text" id="inviteCode" class="form-control input-field"/>
+            </div>
+        </div>
+
+        <div class="row row-custom">
+            <div class="col-md-8">
+                <label for="name" style="font-weight: bold;">Tài khoản email</label>
+                <input disabled type="text" id="email" class="form-control input-field"/>
+            </div>
+        </div>
+
+        <div class="row row-custom">
+            <div class="col-md-8">
+                <label for="name" style="font-weight: bold;">Tên ngân hàng</label>
+                <input disabled type="text" id="bankName" class="form-control input-field"/>
+            </div>
+        </div>
+
+        <div class="row row-custom">
+            <div class="col-md-8">
+                <label for="name" style="font-weight: bold;">Số tài khoản</label>
+                <input disabled type="text" id="bankNumber" class="form-control input-field"/>
+            </div>
+        </div>
+
+        <div class="row row-custom">
+            <div class="col-md-8">
+                <label for="name" style="font-weight: bold;">Tên chủ tài khoản</label>
+                <input disabled type="text" id="bankOwner" class="form-control input-field"/>
+            </div>
+        </div>
     </div>
+    s
+</div>
 </body>
 
-<script type="text/javascript" src="static/js/xlsx.full.min.js"></script>
-<script type="text/javascript" src="static/js/jszip.js"></script>
-<script type="text/javascript" src="static/js/xlsx-populate.min.js"></script>
-<script type="text/javascript" src="static/js/my-info.js"> </script>
-<script type="text/javascript" src="static/js/constant.js"> </script>
-<link rel="stylesheet" href="static/css/bootstrap-select.css">
-<link rel="stylesheet" href="static/style.css">
-<script src="static/js/bootstrap-select.js"></script>
+<script type="text/javascript" src="/js/xlsx.full.min.js"></script>
+<script type="text/javascript" src="/js/jszip.js"></script>
+<script type="text/javascript" src="/js/xlsx-populate.min.js"></script>
+<script type="text/javascript" src="/js/my-info.js"></script>
+<script type="text/javascript" src="/js/constant.js"></script>
+<link rel="stylesheet" href="/css/bootstrap-select.css">
+<script src="/js/bootstrap-select.js"></script>
+<link rel="stylesheet" href="/style.css">
 
 </html>

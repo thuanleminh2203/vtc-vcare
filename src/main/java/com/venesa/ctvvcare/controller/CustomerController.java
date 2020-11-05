@@ -6,14 +6,12 @@ import com.venesa.ctvvcare.payload.request.CustomerRequest;
 import com.venesa.ctvvcare.payload.response.CustomerResponse;
 import com.venesa.ctvvcare.payload.response.ListCustomerResponse;
 import com.venesa.ctvvcare.service.CustomerService;
-import com.venesa.ctvvcare.service.ExcelExporterService;
 import com.venesa.ctvvcare.utils.ConstUtils;
 import com.venesa.ctvvcare.utils.ResponseData;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.User;
@@ -21,12 +19,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.security.Principal;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -60,9 +53,10 @@ public class CustomerController {
         }
     }
 
-    private List<CustomerResponse> filterByCondition(List<CustomerResponse> lst , BaseRequest rq){
+    private List<CustomerResponse> filterByCondition(List<CustomerResponse> lst, BaseRequest rq) {
         return lst.stream().skip((rq.getPageIndex() - 1) * rq.getPageSize()).limit(rq.getPageSize()).collect(Collectors.toList());
     }
+
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody CustomerRequest rq, BindingResult result) {
         log.info("=========Start create Customer ==========");
@@ -87,7 +81,7 @@ public class CustomerController {
 
     @PostMapping("/search")
     public ResponseEntity<?> getCustomersLv2(Principal principal, @RequestBody BaseRequest rq, BindingResult result) {
-        log.info("=========Start create Customer ==========");
+        log.info("=========Start search Customer ==========");
         try {
             rq.validate(rq, result);
             if (result.hasErrors()) {
@@ -99,54 +93,24 @@ public class CustomerController {
             Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
             User user = (User) authentication.getPrincipal();
             var role = user.getAuthorities();
-            var list = role.isEmpty() ?  customerService.listCustomerByIntroduceCode(principal.getName()) :  customerService.findAll();
-            List<CustomerResponse> dataResponse = rq.getPageIndex() == 0 ? list : filterByCondition(list,rq);
-            System.out.println("===== request=== " + principal.getName());
-            log.info("=========End create Customer ==========");
-            return wrapperResponse.success(new ResponseData<>(ConstUtils.SUCCSESS, ConstUtils.SUCCSESS_MESS,new ListCustomerResponse(list.size(),dataResponse)));
+            var list = role.isEmpty() ? customerService.listCustomerByIntroduceCode(principal.getName()) : customerService.findAll();
+            List<CustomerResponse> dataResponse = rq.getPageIndex() == 0 ? list : filterByCondition(list, rq);
+            log.info("=========End search Customer ==========");
+            return wrapperResponse.success(new ResponseData<>(ConstUtils.SUCCSESS, ConstUtils.SUCCSESS_MESS, new ListCustomerResponse(list.size(), dataResponse)));
 
         } catch (Exception e) {
-            log.info("=========Err create Customer ==========");
+            log.info("=========Err search Customer ==========");
             return wrapperResponse.error(new ResponseData<>(ConstUtils.ERROR, e.getMessage(), null), HttpStatus.BAD_REQUEST);
         }
     }
 
-//    @GetMapping("/download")
-//    @PreAuthorize("hasAnyRole('ROLE_CTV')")
-//    public void exportExcel(HttpServletResponse response, Principal principal, HttpServletRequest req) {
-//        log.info("=========Start export excel Customer ==========");
-//        try {
-//            response.setContentType("application/octet-stream");
-//            DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd_HH:mm:ss");
-//            String currentDateTime = dateFormatter.format(new Date());
-//
-//            String headerKey = "Content-Disposition";
-//            String headerValue = "attachment; filename=customers_" + currentDateTime + ".xlsx";
-//            response.setHeader(headerKey, headerValue);
-//            List<CustomerResponse> list = customerService.findAll();
-//            ExcelExporterService excelExporter = new ExcelExporterService(list);
-//
-//            excelExporter.export(response);
-////            response.sendRedirect(req.getContextPath() + "/login");
-//            System.out.println("===rendridirect=====" + req.getContextPath());
-//            log.info("=========End export excel Customer ==========");
-//
-//        } catch (Exception e) {
-//            log.info("=========Err export excel Customer ==========");
-//        }
-//    }
-
     @GetMapping("/my-info")
     public ResponseEntity<?> myInfoCustomer(Principal principal) {
-        log.info("=========Start create Customer ==========");
+        log.info("=========Start create Customer ==========" + principal.getName());
         try {
-
-//            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-//            User user = (User) authentication.getPrincipal();
-            System.out.println("===== request=== " + principal.getName());
-//            customerService.listCustomerByIntroduceCode(principal.getName());
+            var dataResponse = customerService.myInfoCustomer(principal.getName());
             log.info("=========End create Customer ==========");
-            return wrapperResponse.success(new ResponseData<>(ConstUtils.SUCCSESS, ConstUtils.SUCCSESS_MESS, customerService.myInfoCustomer(principal.getName())));
+            return wrapperResponse.success(new ResponseData<>(ConstUtils.SUCCSESS, ConstUtils.SUCCSESS_MESS, dataResponse));
 
         } catch (Exception e) {
             log.info("=========Err create Customer ==========");

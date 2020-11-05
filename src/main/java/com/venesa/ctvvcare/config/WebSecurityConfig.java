@@ -86,7 +86,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         String[] resources = new String[]{
                 "/", "/css/**", "/fonts/**", "/icons/**", "/img/**",
-                "/favicon.ico", "/js/**", "/error", "/style.css"
+                "/favicon.ico", "/js/**", "/error", "/style.css","/collaborators.html",
+                "/change-password.html","/forget-password.html","/my-info.html","/register.html","/login.html"
         };
 
 
@@ -96,9 +97,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         // dont authenticate this particular request
         httpSecurity.authorizeRequests()
                 .antMatchers(resources).permitAll()
+                .antMatchers("/templates/**").permitAll()
                 .antMatchers("/resources/**").permitAll()
                 .antMatchers("/").permitAll()
-                .antMatchers("/authenticate", "/register", "/api/v1/ctv-vcare/email/**")
+                .antMatchers("/authenticate", "/register", "/api/v1/ctv-vcare/email/**","/api/v1/ctv-vcare/customer/**")
                 .permitAll()
                 .anyRequest().authenticated()
                 .and().sessionManagement()

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="localhost:3306" uuid="763c4b0e-ff1b-4a44-9f60-908e7043e2a5">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/ctv-vcare</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="10.33.68.24" uuid="717f08fb-43ea-4fa5-be7c-726a637a0f9a">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://10.33.68.24:3306/landingpage</jdbc-url>
+    </data-source>
+  </component>
+</project>

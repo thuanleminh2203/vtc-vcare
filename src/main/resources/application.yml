@@ -10,8 +10,8 @@ jwt:
 
 venesa:
   mail:
-    account: anhku0j97@gmail.com
-    password: 0915234576
+    account: hotrokhachhang@venesa.vn
+    password: Venesa@2020
 
 spring:
   application:
@@ -20,22 +20,6 @@ spring:
     allow-bean-definition-overriding: true
   resources:
     static-locations: /static/**
-#  thymeleaf:
-#    cache: false
-#    check-template: true
-#    check-template-location: true
-#    content-type: text/html
-#    enabled: true
-#    encoding: UTF-8
-#    mode: HTML5
-#    prefix: /template
-#    suffix: .html
-#  datasource:
-#    url: jdbc:mysql://127.0.0.1:3306/ctv-vcare
-#    username: root
-#    password: 123456
-#    platform: mysql
-#    driver-class-name: com.mysql.cj.jdbc.Driver
   datasource:
       url: jdbc:mysql://10.33.68.24:3306/landingpage
       username: adminlandingpage

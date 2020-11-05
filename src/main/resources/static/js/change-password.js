@@ -9,14 +9,22 @@ $("#confirmPassword").change(function () {
     confirmPassword = $(this).val();
 });
 
-function changePassword() {
-    var url_string = window.location.href;
-    var url = new URL(url_string);
-    var token = url.searchParams.get("token");
+async function changePassword() {
+    // var url_string = window.location.href;
+    // var url = new URL(url_string);
+    // var token = url.searchParams.get("token");
+    // let req = ({
+    //     newPassword,
+    //     token
+    // });
+    const urlParams = new URLSearchParams(window.location.search);
+    const token = urlParams.get('token');
     let req = ({
         newPassword,
         token
     });
+
+    await resetAction(req)
 
 }
 
