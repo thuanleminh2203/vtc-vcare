@@ -86,7 +86,7 @@ const registerAction = async (req) => {
     }
     document.getElementsByClassName('modal-body')[0].innerText = "Đăng ký thành công !";
     try {
-        const response = await fetch('http://10.33.60.12:8088/api/v1/ctv-vcare/customer', {
+        const response = await fetch('http://10.33.60.12:8088/api/v1/ctv-vcare/customer/register', {
             method: 'POST',
             body: JSON.stringify(req),
             headers: {

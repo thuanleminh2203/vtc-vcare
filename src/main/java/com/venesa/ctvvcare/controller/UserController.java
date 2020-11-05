@@ -1,20 +1,11 @@
 package com.venesa.ctvvcare.controller;
 
 
-import com.venesa.ctvvcare.dto.UserDTO;
-import com.venesa.ctvvcare.dto.UserDetailDTO;
 import com.venesa.ctvvcare.service.JwtUserDetailsService;
 import com.venesa.ctvvcare.service.UserService;
-import com.venesa.ctvvcare.utils.ConstUtils;
-import com.venesa.ctvvcare.utils.ResponseData;
-import com.venesa.ctvvcare.utils.WapperDataResponse;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Sort;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController

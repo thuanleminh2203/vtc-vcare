@@ -4,7 +4,6 @@ import com.venesa.ctvvcare.entity.User;
 import com.venesa.ctvvcare.payload.request.ChangePasswordRequest;
 import com.venesa.ctvvcare.payload.request.EmailRequest;
 import com.venesa.ctvvcare.repository.UserRepository;
-import com.venesa.ctvvcare.service.CustomerService;
 import com.venesa.ctvvcare.service.EmailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -22,9 +21,6 @@ public class EmailServicerImpl implements EmailService {
 
     @Autowired
     private JavaMailSenderImpl emailSender;
-
-    @Autowired
-    private CustomerService customerService;
 
     @Autowired
     private UserRepository userRepository;
@@ -57,11 +53,11 @@ public class EmailServicerImpl implements EmailService {
         user.setPassword(bcryptEncoder.encode(newPassword));
         String token = UUID.randomUUID().toString();
         user.setTokenResetPassword(token);
-        user.setExpiryDateToken(new Date(System.currentTimeMillis() + 24*60*60*1000));
+        user.setExpiryDateToken(new Date(System.currentTimeMillis() + 24 * 60 * 60 * 1000));
         userRepository.save(user);
         SimpleMailMessage message = new SimpleMailMessage();
         message.setSubject("Reset password ");
-        message.setText("Click this url for change password: 10.33.60.12/api/v1/ctv-vcare/email/redirect-page-pwd/"+token);
+        message.setText("Click this url for change password: 10.33.60.12/api/v1/ctv-vcare/email/redirect-page-pwd/" + token);
         message.setTo(rq.getEmail());
         emailSender.send(message);
     }
@@ -69,11 +65,11 @@ public class EmailServicerImpl implements EmailService {
     @Override
     public void changePassword(ChangePasswordRequest rq) throws Exception {
         User user = userRepository.findByToken(rq.getToken());
-        if(user==null){
+        if (user == null) {
             throw new Exception("This mail don't change password");
         }
-        if((new Date().after(user.getExpiryDateToken()))){
-            throw new Exception("InvalidToken : Expired");
+        if ((new Date().after(user.getExpiryDateToken()))) {
+            throw new Exception("Đường dẫn đã hết hạn sử dụng");
         }
         String newPassword = bcryptEncoder.encode((rq.getNewPassword()));
         user.setUpdatedBy("user");
@@ -81,6 +77,12 @@ public class EmailServicerImpl implements EmailService {
         user.setPassword(newPassword);
         userRepository.save(user);
 
+    }
+
+    @Override
+    public boolean checkToken(String token) {
+        User user = userRepository.findByToken(token);
+        return user == null || new Date().after(user.getExpiryDateToken());
     }
 
 

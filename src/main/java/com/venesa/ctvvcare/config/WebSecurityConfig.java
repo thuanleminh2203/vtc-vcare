@@ -87,7 +87,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         String[] resources = new String[]{
                 "/", "/css/**", "/fonts/**", "/icons/**", "/img/**",
                 "/favicon.ico", "/js/**", "/error", "/style.css","/collaborators.html",
-                "/change-password.html","/forget-password.html","/my-info.html","/register.html","/login.html"
+                "/change-password.html","/forget-password.html","/my-info.html","/register.html","/login.html","/expired-reset-pwd.html"
         };
 
 

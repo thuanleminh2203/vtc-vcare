@@ -15,8 +15,6 @@ public class HomeController {
 
     @GetMapping({"","/login.html"})
     public String home(Model model) {
-//        model.addAttribute("abc", "123456");
-        System.out.println("===here====");
         return "login";
     }
 }

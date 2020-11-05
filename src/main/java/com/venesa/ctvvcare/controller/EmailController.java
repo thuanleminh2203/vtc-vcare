@@ -69,12 +69,13 @@ public class EmailController {
     public void redirectPageChangePassword(@PathVariable String token, HttpServletResponse response) {
         try {
             log.info("===Start redirect to page change password ====");
-
-            response.sendRedirect("http://10.33.60.12/change-password.html?token=" + token);
+            if(emailService.checkToken(token)){
+                response.sendRedirect("http://10.33.60.12/change-password.html?token=" + token);
+            }
+            response.sendRedirect("http://10.33.60.12/expired-reset-pwd.html");
         } catch (Exception e) {
             log.error("==== Error when redirect page =====" + e.getMessage());
         }
-
     }
 
 }

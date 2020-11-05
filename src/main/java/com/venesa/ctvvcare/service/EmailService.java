@@ -15,4 +15,6 @@ public interface EmailService {
 	 void resetPassword(EmailRequest rq) throws Exception;
 
 	 void changePassword(ChangePasswordRequest jwtRequest) throws Exception;
+
+	 boolean checkToken(String token) throws Exception;
 }
