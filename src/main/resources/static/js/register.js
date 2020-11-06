@@ -102,6 +102,7 @@ const registerAction = async (req) => {
                 document.getElementsByClassName('modal-body')[0].innerText = myJson.errorMessage;
                 break;
             default:
+                window.location.href = "./login.html";
                 break;
         }
     } catch (error) {

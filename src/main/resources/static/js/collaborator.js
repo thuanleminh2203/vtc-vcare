@@ -301,7 +301,7 @@ function drawTable(listCTV) {
 
 function showExportBtn() {
     var role = localStorage.getItem('role');
-    if (role !== "ROLE_CTV") {
+    if (role !== "ROLE_ADMIN") {
         document.getElementById("btnExport").style.display = "none";
     }
 }
