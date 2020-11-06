@@ -76,7 +76,6 @@ public class EmailServicerImpl implements EmailService {
         user.setUpdatedDate(new Date());
         user.setPassword(newPassword);
         userRepository.save(user);
-
     }
 
     @Override
