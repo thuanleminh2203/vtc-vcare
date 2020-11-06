@@ -171,7 +171,7 @@ function validate() {
         return "Tên chủ tài khoản không được để trống !";
     }
 
-    if (document.getElementById("checkbox").checked = false) {
+    if (document.getElementById("checkbox").checked === false) {
         return "Bạn chưa đồng ý với điều khoản dịch vụ !";
     }
 }

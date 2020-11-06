@@ -173,7 +173,8 @@ body.loading .modal {
     /* width: 15x; */
 }
 
-.btn-cancel {}
+.btn-cancel {
+}
 
 .btn-submit {
     font-size: 13px;
@@ -326,8 +327,8 @@ hide:not(.ng-hide-animate) {
 }
 
 .login {
-    margin-left: 40%;
-    margin: 2em 0;
+    /*margin-left: 40%;*/
+    margin: 2em 0 0 -4em;
     display: inline-block;
     vertical-align: middle;
     white-space: normal;
