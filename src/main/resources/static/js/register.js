@@ -16,7 +16,7 @@ $("#name").change(function () {
 });
 
 $("#phone").change(function () {
-    phoneNumber = $(this).val();
+    phoneNumber = $(this).val().replaceAll(" ", "");
 
 });
 
@@ -34,7 +34,7 @@ $("#inviteCode").change(function () {
 
 ////////////////
 $("#email").change(function () {
-    email = $(this).val();
+    email = $(this).val().replaceAll(" ", "");
 });
 
 $("#password").change(function () {
@@ -48,7 +48,7 @@ $("#bankName").change(function () {
 
 
 $("#bankNumber").change(function () {
-    bankAccountNumber = $(this).val();
+    bankAccountNumber = $(this).val().replaceAll(" ", "");
 });
 
 $("#bankOwner").change(function () {
@@ -139,7 +139,6 @@ function validate() {
         return "Mã giới thiệu không được để trống !";
     }
 
-
     if (email == null || email == undefined || email == "") {
         return "Email không được để trống !";
     }
@@ -171,5 +170,13 @@ function validate() {
     if (bankAccountName == null || bankAccountName == undefined || bankAccountName == "") {
         return "Tên chủ tài khoản không được để trống !";
     }
+
+    if (document.getElementById("checkbox").checked = false) {
+        return "Bạn chưa đồng ý với điều khoản dịch vụ !";
+    }
+}
+
+function returnLogin() {
+    window.location.href = "./login.html";
 }
 
