@@ -63,7 +63,7 @@ public class CustomerController {
         try {
             rq.validate(rq, result);
             if (result.hasErrors()) {
-                log.error("=========Exception update Appointment : validate ==========" + Objects.requireNonNull(result.getFieldError()).getDefaultMessage());
+                log.error("=========Exception update Appointment : validate ==========" + result.getFieldError().getDefaultMessage());
                 return wrapperResponse.error(
                         new ResponseData<>(ConstUtils.ERROR, result.getFieldError().getDefaultMessage(), null),
                         HttpStatus.BAD_REQUEST);
@@ -74,7 +74,7 @@ public class CustomerController {
             return wrapperResponse.success(new ResponseData<>(ConstUtils.SUCCSESS, ConstUtils.SUCCSESS_MESS, null));
 
         } catch (Exception e) {
-            log.info("=========Err create Customer ==========");
+            log.info("=========Err create Customer ==========" + e.getMessage());
             return wrapperResponse.error(new ResponseData<>(ConstUtils.ERROR, e.getMessage(), null), HttpStatus.BAD_REQUEST);
         }
     }

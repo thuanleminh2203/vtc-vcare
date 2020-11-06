@@ -57,7 +57,7 @@ public class EmailServicerImpl implements EmailService {
         userRepository.save(user);
         SimpleMailMessage message = new SimpleMailMessage();
         message.setSubject("Reset password ");
-        message.setText("Click this url for change password: 10.33.60.12/api/v1/ctv-vcare/email/redirect-page-pwd/" + token);
+        message.setText("Click this url for change password: http://ctv.venesa.vn/api/v1/ctv-vcare/email/redirect-page-pwd/" + token);
         message.setTo(rq.getEmail());
         emailSender.send(message);
     }

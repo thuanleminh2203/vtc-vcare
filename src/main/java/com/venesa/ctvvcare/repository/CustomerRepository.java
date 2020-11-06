@@ -28,4 +28,7 @@ public interface CustomerRepository extends JpaRepository<CustomerEntity,Long> {
 
     @Query(value = "SELECT * from customer c WHERE c.email = ?1",nativeQuery = true)
     CustomerEntity myInfoCustomer(String username);
+
+    @Query(value = "SELECT * FROM customer c WHERE c.phone_number = ?1 or c.identify_card = ?2 or c.bank_account_number = ?3",nativeQuery = true)
+    CustomerEntity findCustomerByConditions(String phoneNumber, String identifyCode, String bankAccountNumber);
 }

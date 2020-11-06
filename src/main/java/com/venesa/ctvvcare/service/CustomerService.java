@@ -1,5 +1,6 @@
 package com.venesa.ctvvcare.service;
 
+import com.venesa.ctvvcare.entity.CustomerEntity;
 import com.venesa.ctvvcare.payload.request.CustomerRequest;
 import com.venesa.ctvvcare.payload.response.CustomerResponse;
 
@@ -16,6 +17,5 @@ public interface CustomerService {
     String getIntroduceCodeByUsername(String username) throws Exception;
     List<CustomerResponse> findAll();
     List<CustomerResponse> listCustomerByIntroduceCode(String username) throws Exception;
-
     CustomerResponse myInfoCustomer(String username);
 }

@@ -29,18 +29,28 @@ import java.util.List;
 public class CustomerServiceImpl implements CustomerService {
     private final CustomerRepository customerRepository;
     private final ObjectMapper mapper;
-    private final IntroduceRepository introduceRepository;
-    private final UserRepository userRepository;
-    private final PasswordEncoder bcryptEncoder;
     private final JwtUserDetailsService jwtUserDetailsService;
 
     @Override
-//    @Transactional(rollbackFor = Exception.class)
     public void save(CustomerRequest request) throws Exception {
         if(request.getIntroduceCustomerCode() != null && !request.getIntroduceCustomerCode().isEmpty()){
             if(getIdCustomerIntroduce(request.getIntroduceCustomerCode()) == null)
-                throw new Exception("Not found user with IntroduceCode: " + request.getIntroduceCustomerCode());
+                throw new Exception("Không tìm thấy CTV với mã giới thiệu: " + request.getIntroduceCustomerCode());
         }
+        CustomerEntity customer = customerRepository.findCustomerByConditions(request.getPhoneNumber(),request.getIdentifyCard(),request.getBankAccountNumber());
+        if(customer != null){
+            if(customer.getPhoneNumber().equals(request.getPhoneNumber())){
+                throw new Exception("Số điện thoại này đã được sử dụng: " + request.getIntroduceCustomerCode());
+            }
+            if(customer.getIdentifyCard().equals(request.getIdentifyCard())){
+                throw new Exception("Số CMND này đã được sử dụng: " + request.getIdentifyCard());
+            }
+            if(customer.getBankAccountNumber().equals(request.getBankAccountNumber())){
+                throw new Exception("Số tài khoản này đã được sử dụng: " + request.getBankAccountNumber());
+            }
+        }
+
+
         request.setCreatedDate(new Date());
         request.setCreatedBy("System-crm");
         CustomerEntity entity = mapper.convertValue(request, CustomerEntity.class);
