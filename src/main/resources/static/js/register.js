@@ -25,7 +25,7 @@ $("#address").change(function () {
 });
 
 $("#card").change(function () {
-    identifyCard = $(this).val();
+    identifyCard = $(this).val().replaceAll(" ", "");
 });
 
 $("#inviteCode").change(function () {
@@ -131,7 +131,7 @@ function validate() {
         return "CMND không được để trống !";
     }
 
-    if (!(identifyCard.match(CMND_NEW) || identifyCard.match(CMND_OLD))) {
+    if (!(identifyCard.length == 9 || identifyCard.length == 12)) {
         return "Sai định dạng CMND !";
     }
 
@@ -171,7 +171,7 @@ function validate() {
         return "Tên chủ tài khoản không được để trống !";
     }
 
-    if (document.getElementById("checkbox").checked = false) {
+    if (document.getElementById("checkbox").checked === false) {
         return "Bạn chưa đồng ý với điều khoản dịch vụ !";
     }
 }

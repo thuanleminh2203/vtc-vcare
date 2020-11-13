@@ -13,7 +13,7 @@
 
     <!-- Bootstrap 4 -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
-	<link rel="stylesheet" href="/css/bootstrap-select.css">
+    <link rel="stylesheet" href="/css/bootstrap-select.css">
     <script src="/js/popper.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/style.css">
@@ -29,8 +29,6 @@
 </div>
 
 
-
-
 <div class="row text-center" style="margin-left: 45%;">
     <section class="m-b-lg login">
         <!-- <form name="partnerForm" ng-submit="signin(partnerForm.$valid)"
@@ -41,11 +39,10 @@
                 <div class="form-group has-error" show-errors="">
                     <input type="email" id="email" name="email" autocomplete="off" oninput="hiddenEmailEmpty()"
                            class="form-control username ng-invalid ng-dirty ng-invalid-required ng-touched ng-valid-email"
-                           ng-model="credentials.email" placeholder="Email" lowercase="" required=""
-                           style="text-transform: lowercase;">
+                           ng-model="credentials.email" placeholder="Email" required="">
                     <div id="emailEmpty" ng-messages="partnerForm.email.$error" role="alert" class="ng-active">
                         <!-- ngMessage: required -->
-                        <p class="help-block error-text ng-scope" ng-message="required">Vui lòng nhập Email đăng
+                        <p class="help-block error-text ng-scope" ng-message="required">Vui lòng nhập email đăng
                             nhập</p>
                         <!-- ngMessage: email -->
                     </div>

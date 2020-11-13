@@ -203,20 +203,45 @@ function changePageStep(page) {
     getCTVActionPagination(req);
 }
 
+function changePageFirst() {
+    currentPage = 1;
+    reDraw(1, 2, totalPage, totalPage - 1, totalPage, 0, 1);
+    let req = ({
+        pageIndex: currentPage,
+        pageSize
+    });
+    getCTVActionPagination(req);
+}
+
+function changePageLast() {
+    currentPage = totalPage;
+    reDraw(1, 2, totalPage, totalPage - 1, totalPage, 1, 0);
+    let req = ({
+        pageIndex: currentPage,
+        pageSize
+    });
+    getCTVActionPagination(req);
+}
+
 function drawPagination(total) {
+
     if (total % 10 > 0) {
         totalPage = Math.floor(total / 10) + 1;
     } else {
         totalPage = Math.floor(total / 10);
     }
+    if (total == 0) {
+        var pagination = '<li class="page-item active"><a href="#" class="page-link">Empty</a></li>';
+        document.getElementById("pagination").innerHTML = pagination;
+        return true;
+    }
+    var pagination = '<li onclick="changePageFirst()" id="pageFirst" class="page-item active"><a href="#" class="page-link">First</a></li>';
+    pagination += '<li onclick="changePageLast()" id="pageLast" class="page-item active"><a href="#" class="page-link">Last</a></li>';
 
     if (currentPage == 1) {
-        var pagination = '<li id ="previous" class="page-item disabled"><a class="page-link href="#">Previous</a></li>';
+        pagination += '<li id ="previous" class="page-item disabled"><a class="page-link href="#">Previous</a></li>';
     } else {
-        var pagination = '<li onclick="changePagePrevious()" id ="previous" class="page-item active"><a class="page-link href="#">Previous</a></li>';
-    }
-    if (total == 0) {
-        pagination += '<li class="page-item active"><a href="#" class="page-link">Empty</a></li>';
+        pagination += '<li onclick="changePagePrevious()" id ="previous" class="page-item active"><a class="page-link href="#">Previous</a></li>';
     }
 
     if (total > 5) {
@@ -236,10 +261,13 @@ function drawPagination(total) {
 }
 
 function reDraw(value1, value2, totalPage, value4, value5, pre, next) {
+
+    var pagination = '<li onclick="changePageFirst()" id="pageFirst" class="page-item active"><a href="#" class="page-link">First</a></li>';
+    pagination += '<li onclick="changePageLast()" id="pageLast" class="page-item active"><a href="#" class="page-link">Last</a></li>';
     if (pre == 0) {
-        var pagination = '<li id ="previous" class="page-item disabled"><a class="page-link href="#">Previous</a></li>';
+        pagination += '<li id ="previous" class="page-item disabled"><a class="page-link href="#">Previous</a></li>';
     } else {
-        var pagination = '<li onclick="changePagePrevious()" id ="previous" class="page-item active"><a class="page-link href="#">Previous</a></li>';
+        pagination += '<li onclick="changePagePrevious()" id ="previous" class="page-item active"><a class="page-link href="#">Previous</a></li>';
     }
 
     if (currentPage == value1) {

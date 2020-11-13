@@ -33,6 +33,12 @@ body {
     }
 }
 
+@media (min-width: 360px) {
+    .table-title {
+        max-width: 200%;
+    }
+}
+
 .first-row {
     width: 150px;
 }
@@ -76,7 +82,7 @@ table.table tr th, table.table tr td {
 }
 
 table.table tr th:first-child {
-    width: 60px;
+    width: 100px;
 }
 
 table.table tr th:last-child {
@@ -133,7 +139,8 @@ table.table .avatar {
     margin-right: 10px;
 }
 
-.container-custom {}
+.container-custom {
+}
 
 .pagination {
     float: right;
@@ -210,7 +217,7 @@ table.table .avatar {
     z-index: 2;
 }
 
-.custom-checkbox input[type="checkbox"]:checked+label:after {
+.custom-checkbox input[type="checkbox"]:checked + label:after {
     content: '';
     position: absolute;
     left: 6px;
@@ -224,16 +231,16 @@ table.table .avatar {
     transform: rotateZ(45deg);
 }
 
-.custom-checkbox input[type="checkbox"]:checked+label:before {
+.custom-checkbox input[type="checkbox"]:checked + label:before {
     border-color: #03A9F4;
     background: #03A9F4;
 }
 
-.custom-checkbox input[type="checkbox"]:checked+label:after {
+.custom-checkbox input[type="checkbox"]:checked + label:after {
     border-color: #fff;
 }
 
-.custom-checkbox input[type="checkbox"]:disabled+label:before {
+.custom-checkbox input[type="checkbox"]:disabled + label:before {
     color: #b8b8b8;
     cursor: auto;
     box-shadow: none;
@@ -280,4 +287,21 @@ table.table .avatar {
 
 .modal form label {
     font-weight: normal;
+}
+
+.log-out {
+    position: absolute;
+    margin-left: 82%;
+}
+
+@media screen and (max-width: 1024px) {
+    [class*="log-out"] {
+        margin-left: 68%;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    [class*="log-out"] {
+        margin-left: 80%;
+    }
 }

@@ -110,20 +110,19 @@ body.loading .modal {
 }
 
 .nav-center {
-    margin-left: 46%;
+    margin-left: 40%;
     font-size: 18px;
 }
 
 .col-left {
     position: relative;
-    left: 25%;
+    left: 20%;
     margin-top: 15px;
     overflow-wrap: break-word;
 }
 
 .col-right {
     position: relative;
-    left: 12%;
     margin-top: 15px;
 }
 
@@ -141,19 +140,12 @@ body.loading .modal {
     }
 }
 
-@media only screen and (max-width: 992px) {
-    [class*="col-md-8"] {
-        width: 66.66666667%;
-        left: 10%;
-    }
-}
-
-@media only screen and (max-width: 992px) {
-    [class*="nav-center"] {
-        margin-left: 20%;
-        font-size: 18px;
-    }
-}
+/*@media only screen and (max-width: 992px) {*/
+/*    [class*="col-md-7"] {*/
+/*        width: 66.66666667%;*/
+/*        !*left: 10%;*!*/
+/*    }*/
+/*}*/
 
 .input-field {
     width: 50%;
@@ -173,7 +165,8 @@ body.loading .modal {
     /* width: 15x; */
 }
 
-.btn-cancel {}
+.btn-cancel {
+}
 
 .btn-submit {
     font-size: 13px;
@@ -210,15 +203,6 @@ body.loading .modal {
 
 .login label, .login {
     color: #95a7b7;
-}
-
-.login {
-    margin: 2em 0;
-    display: inline-block;
-    vertical-align: middle;
-    white-space: normal;
-    text-align: left;
-    width: 340px;
 }
 
 form {
@@ -326,8 +310,8 @@ hide:not(.ng-hide-animate) {
 }
 
 .login {
-    margin-left: 40%;
-    margin: 2em 0;
+    /*margin-left: 40%;*/
+    margin: 2em 0 0 -7em;
     display: inline-block;
     vertical-align: middle;
     white-space: normal;
@@ -338,10 +322,15 @@ hide:not(.ng-hide-animate) {
     box-sizing: border-box;
 }
 
+@media only screen and (max-width: 1024px) {
+    [class*="login"] {
+        margin: 2em 0 0 -8em;
+    }
+}
+
 .row {
-    left: 40%;
-    margin-right: -15px;
-    margin-left: -15px;
+    margin-right: 0px;
+    margin-left: 0px;
 }
 
 .text-center {
@@ -351,18 +340,6 @@ hide:not(.ng-hide-animate) {
 .m-t-sm {
     margin-top: 10px;
 }
-
-@media only screen and (max-width: 992px) {
-    [class*="login"] {
-        margin-left: -25%;
-    }
-}
-
-/* @media only screen and (max-width: 1024px) {
-    [class*="login"] {
-        margin-left: -15%;
-    }
-} */
 
 .row-custom {
     margin-bottom: 15px;
