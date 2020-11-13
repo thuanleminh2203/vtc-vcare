@@ -24,7 +24,7 @@ const resetAction = async (req) => {
     }
     document.getElementsByClassName('modal-body')[0].innerText = "Bạn vui lòng check email để đổi mật khẩu !";
     try {
-        const response = await fetch('http://localhost:8088/api/v1/ctv-vcare/email/reset-password', {
+        const response = await fetch('http://10.33.60.12:8088/api/v1/ctv-vcare/email/reset-password', {
             method: 'POST',
             body: JSON.stringify(req),
             headers: {

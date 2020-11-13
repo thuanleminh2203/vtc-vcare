@@ -25,7 +25,7 @@ $("#address").change(function () {
 });
 
 $("#card").change(function () {
-    identifyCard = $(this).val();
+    identifyCard = $(this).val().replaceAll(" ", "");
 });
 
 $("#inviteCode").change(function () {
@@ -131,7 +131,7 @@ function validate() {
         return "CMND không được để trống !";
     }
 
-    if (!(identifyCard.match(CMND_NEW) || identifyCard.match(CMND_OLD))) {
+    if (!(identifyCard.length == 9 || identifyCard.length == 12)) {
         return "Sai định dạng CMND !";
     }
 
