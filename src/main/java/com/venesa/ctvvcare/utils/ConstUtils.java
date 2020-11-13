@@ -33,7 +33,8 @@ public class ConstUtils {
 	public static final String REGEX_NUMBER_PHONE = "^[0-9]{10}$";
 	public static final String REGEX_EMAIL = "^(.+)@(.+)$";
 	public static final String REGEX_DATE = "^\\d{4}\\-(0[1-9]|1[012])\\-(0[1-9]|[12][0-9]|3[01])$";
-	public static final String REGEX_IDENTIFY_CODE = "[0-9]{6,}";
+	public static final String REGEX_IDENTIFY_CODE_OLD = "^[0-9]{9}$";
+	public static final String REGEX_IDENTIFY_CODE_NEW = "^[0-9]{12}$";
 
 	public static final int SEND_MESSAGE_ERROR = 0;
 	public static final int SEND_MESSAGE_SUCCESS = 1;

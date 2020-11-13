@@ -49,7 +49,7 @@ public class JwtAuthenticationController {
             authenticate(rq.getUsername(), rq.getPassword());
             final UserDetails userDetails = jwtUserDetailsService.loadUserByUsername(rq.getUsername());
             final String token = jwtTokenUtil.generateToken(userDetails);
-            final Collection<? extends GrantedAuthority> role = userDetails.getAuthorities();
+            final Collection<? extends GrantedAuthority> role = userDetails.getAuthorities().toString().length() == 0 ? null :  userDetails.getAuthorities();
             log.info("====End create customer === ");
             responseEntity = WapperDataResponse.sucsses(new ResponseData<>(ConstUtils.SUCCSESS, "", new JwtResponse(token, role)));
         } catch (Exception e) {
