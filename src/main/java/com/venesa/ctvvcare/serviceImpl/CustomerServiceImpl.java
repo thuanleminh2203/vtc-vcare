@@ -30,7 +30,6 @@ public class CustomerServiceImpl implements CustomerService {
     private final CustomerRepository customerRepository;
     private final ObjectMapper mapper;
     private final JwtUserDetailsService jwtUserDetailsService;
-
     @Override
     public void save(CustomerRequest request) throws Exception {
         if(request.getIntroduceCustomerCode() != null && !request.getIntroduceCustomerCode().isEmpty()){
@@ -40,7 +39,7 @@ public class CustomerServiceImpl implements CustomerService {
         CustomerEntity customer = customerRepository.findCustomerByConditions(request.getPhoneNumber(),request.getIdentifyCard(),request.getBankAccountNumber());
         if(customer != null){
             if(customer.getPhoneNumber().equals(request.getPhoneNumber())){
-                throw new Exception("Số điện thoại này đã được sử dụng: " + request.getIntroduceCustomerCode());
+                throw new Exception("Số điện thoại này đã được sử dụng: " + request.getPhoneNumber());
             }
             if(customer.getIdentifyCard().equals(request.getIdentifyCard())){
                 throw new Exception("Số CMND này đã được sử dụng: " + request.getIdentifyCard());

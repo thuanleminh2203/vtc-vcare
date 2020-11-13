@@ -46,7 +46,7 @@ public class CustomerRequest implements Serializable, Validator {
         ValidatorUtils.checkRegex(customerRequest.getPhoneNumber(), errors, "phoneNumber", ConstUtils.REGEX_NUMBER_PHONE);
 
         ValidatorUtils.checkNullOrEmpty(customerRequest.getIdentifyCard(), errors, "identifyCard");
-        ValidatorUtils.checkRegex(customerRequest.getIdentifyCard(), errors, "identifyCard", ConstUtils.REGEX_IDENTIFY_CODE);
+        ValidatorUtils.checkIdentifyCard(customerRequest.getIdentifyCard(), errors ,"identifyCard");
 
         ValidatorUtils.checkRegex(customerRequest.getEmail(), errors, "email", ConstUtils.REGEX_EMAIL);
 

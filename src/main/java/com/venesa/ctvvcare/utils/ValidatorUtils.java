@@ -2,12 +2,23 @@ package com.venesa.ctvvcare.utils;
 
 import org.springframework.validation.Errors;
 
+import java.util.Observer;
+
 public class ValidatorUtils {
 
     public static void checkLength(String data, Errors error, int max, int min, String nameField) {
         if (checkNullOrEmpty(data, error, nameField)) return;
         if (data.length() > max || data.length() <min) {
             error.rejectValue(nameField, null, nameField + " must smaller than " + max + " and greater " + min);
+        }
+    }
+    public static void checkIdentifyCard(String data, Errors error, String nameField) {
+        if (checkNullOrEmpty(data, error, nameField)) return;
+//        if (!(data.length() == min || data.length() == max)) {
+//            error.rejectValue(nameField, null, nameField + " must equals  " + min + " or greater " + max);
+//        }
+        if(!(data.matches(ConstUtils.REGEX_IDENTIFY_CODE_NEW)|| data.matches(ConstUtils.REGEX_IDENTIFY_CODE_OLD))){
+            error.rejectValue(nameField, null, nameField + "not format");
         }
     }
 
