@@ -101,6 +101,7 @@ const getCTVActionExportExcel = async (req) => {
 }
 
 function changePagePrevious() {
+
     currentPage = currentPage - 1;
     if (currentPage == 1) {
         reDraw(1, 2, totalPage, totalPage - 1, totalPage, 0, 1);
@@ -121,6 +122,7 @@ function changePagePrevious() {
 
 function changePageNext() {
     currentPage = currentPage + 1;
+
     if (currentPage == totalPage) {
         reDraw(currentPage - 3, currentPage - 2, totalPage, currentPage - 1, currentPage, 1, 0);
         let req = ({
@@ -151,6 +153,17 @@ function changePageNext() {
 }
 
 function changePageStep(page) {
+    if (totalPage <= 4) {
+        currentPage = page;
+        smallDraw(totalPage);
+        let req = ({
+            pageIndex: currentPage,
+            pageSize
+        });
+        getCTVActionPagination(req);
+        return false;
+    }
+
     if (page == 1) {
         currentPage = page;
         reDraw(currentPage, currentPage + 1, totalPage, totalPage - 1, totalPage, 0, 1);
@@ -235,6 +248,12 @@ function drawPagination(total) {
         document.getElementById("pagination").innerHTML = pagination;
         return true;
     }
+
+    if (totalPage <= 4) {
+        smallDraw(totalPage);
+        return true;
+    }
+
     var pagination = '<li onclick="changePageFirst()" id="pageFirst" class="page-item active"><a href="#" class="page-link">First</a></li>';
     pagination += '<li onclick="changePageLast()" id="pageLast" class="page-item active"><a href="#" class="page-link">Last</a></li>';
 
@@ -300,6 +319,19 @@ function reDraw(value1, value2, totalPage, value4, value5, pre, next) {
         pagination += '<li id="next" class="page-item disabled"><a href="#" class="page-link">Next</a></li>';
     } else {
         pagination += '<li onclick="changePageNext()" id="next" class="page-item active"><a href="#" class="page-link">Next</a></li>';
+    }
+    document.getElementById("pagination").innerHTML = pagination;
+}
+
+function smallDraw(totalPage) {
+
+    var pagination = '';
+    for (i = 1; i <= totalPage; i++) {
+        if (currentPage == i) {
+            pagination += '<li onclick="changePageStep(' + i + ')" id="page1st" class="page-item active"><a href="#" class="page-link">' + i + '</a></li>';
+        } else {
+            pagination += '<li onclick="changePageStep(' + i + ')" id="page1st" class="page-item"><a href="#" class="page-link">' + i + '</a></li>';
+        }
     }
     document.getElementById("pagination").innerHTML = pagination;
 }
